@@ -1,0 +1,426 @@
+swagger: "2.0"
+info:
+  description: "SolarEdge's Restaurant Reservation API allows restaurant owners easily manage reservations in their restaurants."
+  version: "1.0.0"
+  title: "SolarEdge Restaurant Reservation API"
+  contact:
+    email: "matan.rubin@solaredge.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "restaurants.solaredge.com"
+basePath: "/api/"
+tags:
+- name: "Restaurant"
+  description: "Restaurant related API endpoints"
+- name: "Table"
+  description: "Table related API endpoints"
+- name: "Reservation"
+  description: "Reservation related API endpoints"
+schemes:
+- "http"
+
+# . . . . . . . . . . . .  Paths . . . . . . . . . . . #
+paths:
+  /restaurants:
+    get:
+      tags:
+      - "Restaurant"
+      summary: "Return a list of restaurants"
+      description: ""
+      operationId: "getRestaurants"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/RestaurantInfoResponse"
+    post:
+      tags:
+      - "Restaurant"
+      summary: "Add a new restaurant"
+      description: ""
+      operationId: "addRestaurant"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "AddRestaurantRequest object that needs to be added to the store"
+        required: true
+        schema:
+          $ref: "#/definitions/AddRestaurantRequest"
+      responses:
+        201:
+          description: "Restaurant successfully added"
+          schema:
+            $ref: "#/definitions/AddRestaurantResponse"
+        400:
+          description: "Invalid request"
+  /restaurants/{restaurantId}:
+    get:
+      tags:
+      - "Restaurant"
+      summary: "Return restaurant info"
+      description: ""
+      operationId: "getRestaurantInfo"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "restaurantId"
+        in: "path"
+        description: "ID of restaurant to return"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/RestaurantInfoResponse"
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "Restaurant not found"
+    delete:
+      tags:
+      - "Restaurant"
+      summary: "Deletes a restaurant if there are no reservations"
+      description: ""
+      operationId: "deleteRestaurant"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "restaurantId"
+        in: "path"
+        description: "Restaurant id to delete"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "Restaurant not found"
+
+  /restaurant/{restaurantId}/tables:
+    get:
+      tags:
+      - "Table"
+      summary: "Return a list of tables"
+      description: ""
+      operationId: "getTables"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "restaurantId"
+        in: "path"
+        description: "Restaurant ID"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/TableInfoResponse"
+    post:
+      tags:
+      - "Table"
+      summary: "Add a new table"
+      description: ""
+      operationId: "addTable"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "AddTableRequest object that needs to be added to the store"
+        required: true
+        schema:
+          $ref: "#/definitions/AddTableRequest"
+      - name: "restaurantId"
+        in: "path"
+        description: "Restaurant ID"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        201:
+          description: "Table successfully added"
+          schema:
+            $ref: "#/definitions/AddTableResponse"
+        400:
+          description: "Invalid request"
+  /restaurant/{restaurantId}/tables/{tableId}:
+    get:
+      tags:
+      - "Table"
+      summary: "Return table info"
+      description: ""
+      operationId: "getTableInfo"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "restaurantId"
+        in: "path"
+        description: "Restaurant ID"
+        required: true
+        type: "integer"
+        format: "int64"
+      - name: "tableId"
+        in: "path"
+        description: "ID of table to return"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/TableInfoResponse"
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "Table not found"
+    delete:
+      tags:
+      - "Table"
+      summary: "Deletes a table if there are no reservations"
+      description: ""
+      operationId: "deleteTable"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "restaurantId"
+        in: "path"
+        description: "Restaurant ID"
+        required: true
+        type: "integer"
+        format: "int64"
+      - name: "tableId"
+        in: "path"
+        description: "Table id to delete"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "Table not found"
+
+  /restaurants/{restaurantId}/reservations:
+    get:
+      tags:
+      - "Reservation"
+      summary: "Return a list of reservations"
+      description: ""
+      operationId: "getReservations"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "restaurantId"
+        in: "path"
+        description: "Restaurant ID"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/ReservationInfoResponse"
+    post:
+      tags:
+      - "Reservation"
+      summary: "Add a new restaurant"
+      description: ""
+      operationId: "addReservation"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "AddReservationRequest object that needs to be added to the store"
+        required: true
+        schema:
+          $ref: "#/definitions/AddReservationRequest"
+      responses:
+        201:
+          description: "Reservation successfully added"
+          schema:
+            $ref: "#/definitions/AddReservationResponse"
+        400:
+          description: "Invalid request"
+
+  /restaurants/{restaurantId}/reservations/{reservationId}:
+    get:
+      tags:
+      - "Reservation"
+      summary: "Return restaurant info"
+      description: ""
+      operationId: "getReservationInfo"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "restaurantId"
+        in: "path"
+        description: "ID of restaurant to return"
+        required: true
+        type: "integer"
+        format: "int64"
+      - name: "reservationId"
+        in: "path"
+        description: "ID of restaurant to return"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ReservationInfoResponse"
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "Reservation not found"
+    delete:
+      tags:
+      - "Reservation"
+      summary: "Deletes a restaurant if there are no reservations"
+      description: ""
+      operationId: "deleteReservation"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "restaurantId"
+        in: "path"
+        description: "Reservation id to delete"
+        required: true
+        type: "integer"
+        format: "int64"
+      - name: "reservationId"
+        in: "path"
+        description: "ID of restaurant to return"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "Reservation not found"
+
+# . . . . . . . . . . . .  Defenitions . . . . . . . . . . . #
+definitions:
+  AddRestaurantRequest:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+      address:
+        type: "string"
+  AddRestaurantResponse:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+  AddTableRequest:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+      capacity:
+        type: "integer"
+  AddTableResponse:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+  AddReservationRequest:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+      start_date:
+        type: "string"
+        format: "date-time"
+      end_date:
+        type: "string"
+        format: "date-time"
+      table_name:
+        type: "string"
+      n_people:
+        type: "integer"
+  AddReservationResponse:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+  RestaurantInfoResponse:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      name:
+        type: "string"
+      address:
+        type: "string"
+  TableInfoResponse:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      name:
+        type: "string"
+      capacity:
+        type: "integer"
+  ReservationInfoResponse:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      name:
+        type: "string"
+      start_date:
+        type: "string"
+        format: "date-time"
+      end_date:
+        type: "string"
+        format: "date-time"
+      table_name:
+        type: "string"
+      n_people:
+        type: "integer"
