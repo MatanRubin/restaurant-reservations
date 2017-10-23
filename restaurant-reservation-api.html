@@ -156,7 +156,7 @@ h={};g()}};typeof define==="function"&&define.amd&&define("google-code-prettify"
     });
   </script>
   <style type="text/css">
-  
+
 /*!
  * Bootstrap v2.3.2
  *
@@ -693,7 +693,7 @@ margin-bottom: 20px;
 </head>
 <body>
   <script>
-    // Script section to load models into a JS Var
+    // Script section to load domain into a JS Var
     var defs = {}
             defs.AddReservationRequest = {
   "type" : "object",
@@ -918,10 +918,10 @@ margin-bottom: 20px;
                           <li class="active"><a href="#examples-Reservation-addReservation-0-curl">Curl</a></li>
                           <li class=""><a href="#examples-Reservation-addReservation-0-java">Java</a></li>
                           <li class=""><a href="#examples-Reservation-addReservation-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Reservation-addReservation-0-groovy">Groovy</a></li>-->
+                          <!--<li class=""><a href="#examples-ReservationDto-addReservation-0-groovy">Groovy</a></li>-->
                           <li class=""><a href="#examples-Reservation-addReservation-0-objc">Obj-C</a></li>
                           <li class=""><a href="#examples-Reservation-addReservation-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Reservation-addReservation-0-angular">Angular</a></li>-->
+                          <!--<li class=""><a href="#examples-ReservationDto-addReservation-0-angular">Angular</a></li>-->
                           <li class=""><a href="#examples-Reservation-addReservation-0-csharp">C#</a></li>
                           <li class=""><a href="#examples-Reservation-addReservation-0-php">PHP</a></li>
                           <li class=""><a href="#examples-Reservation-addReservation-0-perl">Perl</a></li>
@@ -944,7 +944,7 @@ import java.util.*;
 public class ReservationApiExample {
 
     public static void main(String[] args) {
-        
+
         ReservationApi apiInstance = new ReservationApi();
         AddReservationRequest body = ; // AddReservationRequest | AddReservationRequest object that needs to be added to the store
         try {
@@ -977,7 +977,7 @@ public class ReservationApiExample {
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Reservation-addReservation-0-groovy">
+  <div class="tab-pane" id="examples-ReservationDto-addReservation-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-Reservation-addReservation-0-objc">
@@ -1017,7 +1017,7 @@ api.addReservation(body, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Reservation-addReservation-0-angular">
+                            <!--<div class="tab-pane" id="examples-ReservationDto-addReservation-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
                             <div class="tab-pane" id="examples-Reservation-addReservation-0-csharp">
@@ -1033,7 +1033,7 @@ namespace Example
     {
         public void main()
         {
-            
+
             var apiInstance = new ReservationApi();
             var body = new AddReservationRequest(); // AddReservationRequest | AddReservationRequest object that needs to be added to the store
 
@@ -1077,7 +1077,7 @@ use WWW::SwaggerClient::ReservationApi;
 my $api_instance = WWW::SwaggerClient::ReservationApi->new();
 my $body = WWW::SwaggerClient::Object::AddReservationRequest->new(); # AddReservationRequest | AddReservationRequest object that needs to be added to the store
 
-eval { 
+eval {
     my $result = $api_instance->addReservation(body => $body);
     print Dumper($result);
 };
@@ -1097,7 +1097,7 @@ from pprint import pprint
 api_instance = swagger_client.ReservationApi()
 body =  # AddReservationRequest | AddReservationRequest object that needs to be added to the store
 
-try: 
+try:
     # Add a new restaurant
     api_response = api_instance.add_reservation(body)
     pprint(api_response)
@@ -1230,10 +1230,10 @@ $(document).ready(function() {
                           <li class="active"><a href="#examples-Reservation-deleteReservation-0-curl">Curl</a></li>
                           <li class=""><a href="#examples-Reservation-deleteReservation-0-java">Java</a></li>
                           <li class=""><a href="#examples-Reservation-deleteReservation-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Reservation-deleteReservation-0-groovy">Groovy</a></li>-->
+                          <!--<li class=""><a href="#examples-ReservationDto-deleteReservation-0-groovy">Groovy</a></li>-->
                           <li class=""><a href="#examples-Reservation-deleteReservation-0-objc">Obj-C</a></li>
                           <li class=""><a href="#examples-Reservation-deleteReservation-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Reservation-deleteReservation-0-angular">Angular</a></li>-->
+                          <!--<li class=""><a href="#examples-ReservationDto-deleteReservation-0-angular">Angular</a></li>-->
                           <li class=""><a href="#examples-Reservation-deleteReservation-0-csharp">C#</a></li>
                           <li class=""><a href="#examples-Reservation-deleteReservation-0-php">PHP</a></li>
                           <li class=""><a href="#examples-Reservation-deleteReservation-0-perl">Perl</a></li>
@@ -1256,7 +1256,7 @@ import java.util.*;
 public class ReservationApiExample {
 
     public static void main(String[] args) {
-        
+
         ReservationApi apiInstance = new ReservationApi();
         Long restaurantId = 789; // Long | Reservation id to delete
         Long reservationId = 789; // Long | ID of restaurant to return
@@ -1289,7 +1289,7 @@ public class ReservationApiExample {
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Reservation-deleteReservation-0-groovy">
+  <div class="tab-pane" id="examples-ReservationDto-deleteReservation-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-Reservation-deleteReservation-0-objc">
@@ -1330,7 +1330,7 @@ api.deleteReservation(restaurantId, reservationId, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Reservation-deleteReservation-0-angular">
+                            <!--<div class="tab-pane" id="examples-ReservationDto-deleteReservation-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
                             <div class="tab-pane" id="examples-Reservation-deleteReservation-0-csharp">
@@ -1346,7 +1346,7 @@ namespace Example
     {
         public void main()
         {
-            
+
             var apiInstance = new ReservationApi();
             var restaurantId = 789;  // Long | Reservation id to delete
             var reservationId = 789;  // Long | ID of restaurant to return
@@ -1391,7 +1391,7 @@ my $api_instance = WWW::SwaggerClient::ReservationApi->new();
 my $restaurantId = 789; # Long | Reservation id to delete
 my $reservationId = 789; # Long | ID of restaurant to return
 
-eval { 
+eval {
     $api_instance->deleteReservation(restaurantId => $restaurantId, reservationId => $reservationId);
 };
 if ($@) {
@@ -1411,7 +1411,7 @@ api_instance = swagger_client.ReservationApi()
 restaurantId = 789 # Long | Reservation id to delete
 reservationId = 789 # Long | ID of restaurant to return
 
-try: 
+try:
     # Deletes a restaurant if there are no reservations
     api_instance.delete_reservation(restaurantId, reservationId)
 except ApiException as e:
@@ -1525,10 +1525,10 @@ except ApiException as e:
                           <li class="active"><a href="#examples-Reservation-getReservationInfo-0-curl">Curl</a></li>
                           <li class=""><a href="#examples-Reservation-getReservationInfo-0-java">Java</a></li>
                           <li class=""><a href="#examples-Reservation-getReservationInfo-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Reservation-getReservationInfo-0-groovy">Groovy</a></li>-->
+                          <!--<li class=""><a href="#examples-ReservationDto-getReservationInfo-0-groovy">Groovy</a></li>-->
                           <li class=""><a href="#examples-Reservation-getReservationInfo-0-objc">Obj-C</a></li>
                           <li class=""><a href="#examples-Reservation-getReservationInfo-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Reservation-getReservationInfo-0-angular">Angular</a></li>-->
+                          <!--<li class=""><a href="#examples-ReservationDto-getReservationInfo-0-angular">Angular</a></li>-->
                           <li class=""><a href="#examples-Reservation-getReservationInfo-0-csharp">C#</a></li>
                           <li class=""><a href="#examples-Reservation-getReservationInfo-0-php">PHP</a></li>
                           <li class=""><a href="#examples-Reservation-getReservationInfo-0-perl">Perl</a></li>
@@ -1551,7 +1551,7 @@ import java.util.*;
 public class ReservationApiExample {
 
     public static void main(String[] args) {
-        
+
         ReservationApi apiInstance = new ReservationApi();
         Long restaurantId = 789; // Long | ID of restaurant to return
         Long reservationId = 789; // Long | ID of restaurant to return
@@ -1586,7 +1586,7 @@ public class ReservationApiExample {
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Reservation-getReservationInfo-0-groovy">
+  <div class="tab-pane" id="examples-ReservationDto-getReservationInfo-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-Reservation-getReservationInfo-0-objc">
@@ -1630,7 +1630,7 @@ api.getReservationInfo(restaurantId, reservationId, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Reservation-getReservationInfo-0-angular">
+                            <!--<div class="tab-pane" id="examples-ReservationDto-getReservationInfo-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
                             <div class="tab-pane" id="examples-Reservation-getReservationInfo-0-csharp">
@@ -1646,7 +1646,7 @@ namespace Example
     {
         public void main()
         {
-            
+
             var apiInstance = new ReservationApi();
             var restaurantId = 789;  // Long | ID of restaurant to return
             var reservationId = 789;  // Long | ID of restaurant to return
@@ -1693,7 +1693,7 @@ my $api_instance = WWW::SwaggerClient::ReservationApi->new();
 my $restaurantId = 789; # Long | ID of restaurant to return
 my $reservationId = 789; # Long | ID of restaurant to return
 
-eval { 
+eval {
     my $result = $api_instance->getReservationInfo(restaurantId => $restaurantId, reservationId => $reservationId);
     print Dumper($result);
 };
@@ -1714,7 +1714,7 @@ api_instance = swagger_client.ReservationApi()
 restaurantId = 789 # Long | ID of restaurant to return
 reservationId = 789 # Long | ID of restaurant to return
 
-try: 
+try:
     # Return restaurant info
     api_response = api_instance.get_reservation_info(restaurantId, reservationId)
     pprint(api_response)
@@ -1872,10 +1872,10 @@ except ApiException as e:
                           <li class="active"><a href="#examples-Reservation-getReservations-0-curl">Curl</a></li>
                           <li class=""><a href="#examples-Reservation-getReservations-0-java">Java</a></li>
                           <li class=""><a href="#examples-Reservation-getReservations-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Reservation-getReservations-0-groovy">Groovy</a></li>-->
+                          <!--<li class=""><a href="#examples-ReservationDto-getReservations-0-groovy">Groovy</a></li>-->
                           <li class=""><a href="#examples-Reservation-getReservations-0-objc">Obj-C</a></li>
                           <li class=""><a href="#examples-Reservation-getReservations-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Reservation-getReservations-0-angular">Angular</a></li>-->
+                          <!--<li class=""><a href="#examples-ReservationDto-getReservations-0-angular">Angular</a></li>-->
                           <li class=""><a href="#examples-Reservation-getReservations-0-csharp">C#</a></li>
                           <li class=""><a href="#examples-Reservation-getReservations-0-php">PHP</a></li>
                           <li class=""><a href="#examples-Reservation-getReservations-0-perl">Perl</a></li>
@@ -1898,7 +1898,7 @@ import java.util.*;
 public class ReservationApiExample {
 
     public static void main(String[] args) {
-        
+
         ReservationApi apiInstance = new ReservationApi();
         Long restaurantId = 789; // Long | Restaurant ID
         try {
@@ -1931,7 +1931,7 @@ public class ReservationApiExample {
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Reservation-getReservations-0-groovy">
+  <div class="tab-pane" id="examples-ReservationDto-getReservations-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-Reservation-getReservations-0-objc">
@@ -1971,7 +1971,7 @@ api.getReservations(restaurantId, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Reservation-getReservations-0-angular">
+                            <!--<div class="tab-pane" id="examples-ReservationDto-getReservations-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
                             <div class="tab-pane" id="examples-Reservation-getReservations-0-csharp">
@@ -1987,7 +1987,7 @@ namespace Example
     {
         public void main()
         {
-            
+
             var apiInstance = new ReservationApi();
             var restaurantId = 789;  // Long | Restaurant ID
 
@@ -2031,7 +2031,7 @@ use WWW::SwaggerClient::ReservationApi;
 my $api_instance = WWW::SwaggerClient::ReservationApi->new();
 my $restaurantId = 789; # Long | Restaurant ID
 
-eval { 
+eval {
     my $result = $api_instance->getReservations(restaurantId => $restaurantId);
     print Dumper($result);
 };
@@ -2051,7 +2051,7 @@ from pprint import pprint
 api_instance = swagger_client.ReservationApi()
 restaurantId = 789 # Long | Restaurant ID
 
-try: 
+try:
     # Return a list of reservations
     api_response = api_instance.get_reservations(restaurantId)
     pprint(api_response)
@@ -2173,10 +2173,10 @@ except ApiException as e:
                           <li class="active"><a href="#examples-Restaurant-addRestaurant-0-curl">Curl</a></li>
                           <li class=""><a href="#examples-Restaurant-addRestaurant-0-java">Java</a></li>
                           <li class=""><a href="#examples-Restaurant-addRestaurant-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Restaurant-addRestaurant-0-groovy">Groovy</a></li>-->
+                          <!--<li class=""><a href="#examples-RestaurantDto-addRestaurant-0-groovy">Groovy</a></li>-->
                           <li class=""><a href="#examples-Restaurant-addRestaurant-0-objc">Obj-C</a></li>
                           <li class=""><a href="#examples-Restaurant-addRestaurant-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Restaurant-addRestaurant-0-angular">Angular</a></li>-->
+                          <!--<li class=""><a href="#examples-RestaurantDto-addRestaurant-0-angular">Angular</a></li>-->
                           <li class=""><a href="#examples-Restaurant-addRestaurant-0-csharp">C#</a></li>
                           <li class=""><a href="#examples-Restaurant-addRestaurant-0-php">PHP</a></li>
                           <li class=""><a href="#examples-Restaurant-addRestaurant-0-perl">Perl</a></li>
@@ -2199,7 +2199,7 @@ import java.util.*;
 public class RestaurantApiExample {
 
     public static void main(String[] args) {
-        
+
         RestaurantApi apiInstance = new RestaurantApi();
         AddRestaurantRequest body = ; // AddRestaurantRequest | AddRestaurantRequest object that needs to be added to the store
         try {
@@ -2232,7 +2232,7 @@ public class RestaurantApiExample {
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Restaurant-addRestaurant-0-groovy">
+  <div class="tab-pane" id="examples-RestaurantDto-addRestaurant-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-Restaurant-addRestaurant-0-objc">
@@ -2272,7 +2272,7 @@ api.addRestaurant(body, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Restaurant-addRestaurant-0-angular">
+                            <!--<div class="tab-pane" id="examples-RestaurantDto-addRestaurant-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
                             <div class="tab-pane" id="examples-Restaurant-addRestaurant-0-csharp">
@@ -2288,7 +2288,7 @@ namespace Example
     {
         public void main()
         {
-            
+
             var apiInstance = new RestaurantApi();
             var body = new AddRestaurantRequest(); // AddRestaurantRequest | AddRestaurantRequest object that needs to be added to the store
 
@@ -2332,7 +2332,7 @@ use WWW::SwaggerClient::RestaurantApi;
 my $api_instance = WWW::SwaggerClient::RestaurantApi->new();
 my $body = WWW::SwaggerClient::Object::AddRestaurantRequest->new(); # AddRestaurantRequest | AddRestaurantRequest object that needs to be added to the store
 
-eval { 
+eval {
     my $result = $api_instance->addRestaurant(body => $body);
     print Dumper($result);
 };
@@ -2352,7 +2352,7 @@ from pprint import pprint
 api_instance = swagger_client.RestaurantApi()
 body =  # AddRestaurantRequest | AddRestaurantRequest object that needs to be added to the store
 
-try: 
+try:
     # Add a new restaurant
     api_response = api_instance.add_restaurant(body)
     pprint(api_response)
@@ -2485,10 +2485,10 @@ $(document).ready(function() {
                           <li class="active"><a href="#examples-Restaurant-deleteRestaurant-0-curl">Curl</a></li>
                           <li class=""><a href="#examples-Restaurant-deleteRestaurant-0-java">Java</a></li>
                           <li class=""><a href="#examples-Restaurant-deleteRestaurant-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Restaurant-deleteRestaurant-0-groovy">Groovy</a></li>-->
+                          <!--<li class=""><a href="#examples-RestaurantDto-deleteRestaurant-0-groovy">Groovy</a></li>-->
                           <li class=""><a href="#examples-Restaurant-deleteRestaurant-0-objc">Obj-C</a></li>
                           <li class=""><a href="#examples-Restaurant-deleteRestaurant-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Restaurant-deleteRestaurant-0-angular">Angular</a></li>-->
+                          <!--<li class=""><a href="#examples-RestaurantDto-deleteRestaurant-0-angular">Angular</a></li>-->
                           <li class=""><a href="#examples-Restaurant-deleteRestaurant-0-csharp">C#</a></li>
                           <li class=""><a href="#examples-Restaurant-deleteRestaurant-0-php">PHP</a></li>
                           <li class=""><a href="#examples-Restaurant-deleteRestaurant-0-perl">Perl</a></li>
@@ -2511,7 +2511,7 @@ import java.util.*;
 public class RestaurantApiExample {
 
     public static void main(String[] args) {
-        
+
         RestaurantApi apiInstance = new RestaurantApi();
         Long restaurantId = 789; // Long | Restaurant id to delete
         try {
@@ -2542,7 +2542,7 @@ public class RestaurantApiExample {
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Restaurant-deleteRestaurant-0-groovy">
+  <div class="tab-pane" id="examples-RestaurantDto-deleteRestaurant-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-Restaurant-deleteRestaurant-0-objc">
@@ -2579,7 +2579,7 @@ api.deleteRestaurant(restaurantId, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Restaurant-deleteRestaurant-0-angular">
+                            <!--<div class="tab-pane" id="examples-RestaurantDto-deleteRestaurant-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
                             <div class="tab-pane" id="examples-Restaurant-deleteRestaurant-0-csharp">
@@ -2595,7 +2595,7 @@ namespace Example
     {
         public void main()
         {
-            
+
             var apiInstance = new RestaurantApi();
             var restaurantId = 789;  // Long | Restaurant id to delete
 
@@ -2637,7 +2637,7 @@ use WWW::SwaggerClient::RestaurantApi;
 my $api_instance = WWW::SwaggerClient::RestaurantApi->new();
 my $restaurantId = 789; # Long | Restaurant id to delete
 
-eval { 
+eval {
     $api_instance->deleteRestaurant(restaurantId => $restaurantId);
 };
 if ($@) {
@@ -2656,7 +2656,7 @@ from pprint import pprint
 api_instance = swagger_client.RestaurantApi()
 restaurantId = 789 # Long | Restaurant id to delete
 
-try: 
+try:
     # Deletes a restaurant if there are no reservations
     api_instance.delete_restaurant(restaurantId)
 except ApiException as e:
@@ -2744,10 +2744,10 @@ except ApiException as e:
                           <li class="active"><a href="#examples-Restaurant-getRestaurantInfo-0-curl">Curl</a></li>
                           <li class=""><a href="#examples-Restaurant-getRestaurantInfo-0-java">Java</a></li>
                           <li class=""><a href="#examples-Restaurant-getRestaurantInfo-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Restaurant-getRestaurantInfo-0-groovy">Groovy</a></li>-->
+                          <!--<li class=""><a href="#examples-RestaurantDto-getRestaurantInfo-0-groovy">Groovy</a></li>-->
                           <li class=""><a href="#examples-Restaurant-getRestaurantInfo-0-objc">Obj-C</a></li>
                           <li class=""><a href="#examples-Restaurant-getRestaurantInfo-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Restaurant-getRestaurantInfo-0-angular">Angular</a></li>-->
+                          <!--<li class=""><a href="#examples-RestaurantDto-getRestaurantInfo-0-angular">Angular</a></li>-->
                           <li class=""><a href="#examples-Restaurant-getRestaurantInfo-0-csharp">C#</a></li>
                           <li class=""><a href="#examples-Restaurant-getRestaurantInfo-0-php">PHP</a></li>
                           <li class=""><a href="#examples-Restaurant-getRestaurantInfo-0-perl">Perl</a></li>
@@ -2770,7 +2770,7 @@ import java.util.*;
 public class RestaurantApiExample {
 
     public static void main(String[] args) {
-        
+
         RestaurantApi apiInstance = new RestaurantApi();
         Long restaurantId = 789; // Long | ID of restaurant to return
         try {
@@ -2803,7 +2803,7 @@ public class RestaurantApiExample {
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Restaurant-getRestaurantInfo-0-groovy">
+  <div class="tab-pane" id="examples-RestaurantDto-getRestaurantInfo-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-Restaurant-getRestaurantInfo-0-objc">
@@ -2843,7 +2843,7 @@ api.getRestaurantInfo(restaurantId, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Restaurant-getRestaurantInfo-0-angular">
+                            <!--<div class="tab-pane" id="examples-RestaurantDto-getRestaurantInfo-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
                             <div class="tab-pane" id="examples-Restaurant-getRestaurantInfo-0-csharp">
@@ -2859,7 +2859,7 @@ namespace Example
     {
         public void main()
         {
-            
+
             var apiInstance = new RestaurantApi();
             var restaurantId = 789;  // Long | ID of restaurant to return
 
@@ -2903,7 +2903,7 @@ use WWW::SwaggerClient::RestaurantApi;
 my $api_instance = WWW::SwaggerClient::RestaurantApi->new();
 my $restaurantId = 789; # Long | ID of restaurant to return
 
-eval { 
+eval {
     my $result = $api_instance->getRestaurantInfo(restaurantId => $restaurantId);
     print Dumper($result);
 };
@@ -2923,7 +2923,7 @@ from pprint import pprint
 api_instance = swagger_client.RestaurantApi()
 restaurantId = 789 # Long | ID of restaurant to return
 
-try: 
+try:
     # Return restaurant info
     api_response = api_instance.get_restaurant_info(restaurantId)
     pprint(api_response)
@@ -3055,10 +3055,10 @@ except ApiException as e:
                           <li class="active"><a href="#examples-Restaurant-getRestaurants-0-curl">Curl</a></li>
                           <li class=""><a href="#examples-Restaurant-getRestaurants-0-java">Java</a></li>
                           <li class=""><a href="#examples-Restaurant-getRestaurants-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Restaurant-getRestaurants-0-groovy">Groovy</a></li>-->
+                          <!--<li class=""><a href="#examples-RestaurantDto-getRestaurants-0-groovy">Groovy</a></li>-->
                           <li class=""><a href="#examples-Restaurant-getRestaurants-0-objc">Obj-C</a></li>
                           <li class=""><a href="#examples-Restaurant-getRestaurants-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Restaurant-getRestaurants-0-angular">Angular</a></li>-->
+                          <!--<li class=""><a href="#examples-RestaurantDto-getRestaurants-0-angular">Angular</a></li>-->
                           <li class=""><a href="#examples-Restaurant-getRestaurants-0-csharp">C#</a></li>
                           <li class=""><a href="#examples-Restaurant-getRestaurants-0-php">PHP</a></li>
                           <li class=""><a href="#examples-Restaurant-getRestaurants-0-perl">Perl</a></li>
@@ -3081,7 +3081,7 @@ import java.util.*;
 public class RestaurantApiExample {
 
     public static void main(String[] args) {
-        
+
         RestaurantApi apiInstance = new RestaurantApi();
         try {
             array[RestaurantInfoResponse] result = apiInstance.getRestaurants();
@@ -3112,7 +3112,7 @@ public class RestaurantApiExample {
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Restaurant-getRestaurants-0-groovy">
+  <div class="tab-pane" id="examples-RestaurantDto-getRestaurants-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-Restaurant-getRestaurants-0-objc">
@@ -3120,7 +3120,7 @@ public class RestaurantApiExample {
 RestaurantApi *apiInstance = [[RestaurantApi alloc] init];
 
 // Return a list of restaurants
-[apiInstance getRestaurantsWithCompletionHandler: 
+[apiInstance getRestaurantsWithCompletionHandler:
               ^(array[RestaurantInfoResponse] output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
@@ -3148,7 +3148,7 @@ api.getRestaurants(callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Restaurant-getRestaurants-0-angular">
+                            <!--<div class="tab-pane" id="examples-RestaurantDto-getRestaurants-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
                             <div class="tab-pane" id="examples-Restaurant-getRestaurants-0-csharp">
@@ -3164,7 +3164,7 @@ namespace Example
     {
         public void main()
         {
-            
+
             var apiInstance = new RestaurantApi();
 
             try
@@ -3205,7 +3205,7 @@ use WWW::SwaggerClient::RestaurantApi;
 
 my $api_instance = WWW::SwaggerClient::RestaurantApi->new();
 
-eval { 
+eval {
     my $result = $api_instance->getRestaurants();
     print Dumper($result);
 };
@@ -3224,7 +3224,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = swagger_client.RestaurantApi()
 
-try: 
+try:
     # Return a list of restaurants
     api_response = api_instance.get_restaurants()
     pprint(api_response)
@@ -3313,10 +3313,10 @@ except ApiException as e:
                           <li class="active"><a href="#examples-Table-addTable-0-curl">Curl</a></li>
                           <li class=""><a href="#examples-Table-addTable-0-java">Java</a></li>
                           <li class=""><a href="#examples-Table-addTable-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Table-addTable-0-groovy">Groovy</a></li>-->
+                          <!--<li class=""><a href="#examples-TableDto-addTable-0-groovy">Groovy</a></li>-->
                           <li class=""><a href="#examples-Table-addTable-0-objc">Obj-C</a></li>
                           <li class=""><a href="#examples-Table-addTable-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Table-addTable-0-angular">Angular</a></li>-->
+                          <!--<li class=""><a href="#examples-TableDto-addTable-0-angular">Angular</a></li>-->
                           <li class=""><a href="#examples-Table-addTable-0-csharp">C#</a></li>
                           <li class=""><a href="#examples-Table-addTable-0-php">PHP</a></li>
                           <li class=""><a href="#examples-Table-addTable-0-perl">Perl</a></li>
@@ -3339,7 +3339,7 @@ import java.util.*;
 public class TableApiExample {
 
     public static void main(String[] args) {
-        
+
         TableApi apiInstance = new TableApi();
         AddTableRequest body = ; // AddTableRequest | AddTableRequest object that needs to be added to the store
         Long restaurantId = 789; // Long | Restaurant ID
@@ -3374,7 +3374,7 @@ public class TableApiExample {
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Table-addTable-0-groovy">
+  <div class="tab-pane" id="examples-TableDto-addTable-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-Table-addTable-0-objc">
@@ -3418,7 +3418,7 @@ api.addTable(body, restaurantId, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Table-addTable-0-angular">
+                            <!--<div class="tab-pane" id="examples-TableDto-addTable-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
                             <div class="tab-pane" id="examples-Table-addTable-0-csharp">
@@ -3434,7 +3434,7 @@ namespace Example
     {
         public void main()
         {
-            
+
             var apiInstance = new TableApi();
             var body = new AddTableRequest(); // AddTableRequest | AddTableRequest object that needs to be added to the store
             var restaurantId = 789;  // Long | Restaurant ID
@@ -3481,7 +3481,7 @@ my $api_instance = WWW::SwaggerClient::TableApi->new();
 my $body = WWW::SwaggerClient::Object::AddTableRequest->new(); # AddTableRequest | AddTableRequest object that needs to be added to the store
 my $restaurantId = 789; # Long | Restaurant ID
 
-eval { 
+eval {
     my $result = $api_instance->addTable(body => $body, restaurantId => $restaurantId);
     print Dumper($result);
 };
@@ -3502,7 +3502,7 @@ api_instance = swagger_client.TableApi()
 body =  # AddTableRequest | AddTableRequest object that needs to be added to the store
 restaurantId = 789 # Long | Restaurant ID
 
-try: 
+try:
     # Add a new table
     api_response = api_instance.add_table(body, restaurantId)
     pprint(api_response)
@@ -3668,10 +3668,10 @@ $(document).ready(function() {
                           <li class="active"><a href="#examples-Table-deleteTable-0-curl">Curl</a></li>
                           <li class=""><a href="#examples-Table-deleteTable-0-java">Java</a></li>
                           <li class=""><a href="#examples-Table-deleteTable-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Table-deleteTable-0-groovy">Groovy</a></li>-->
+                          <!--<li class=""><a href="#examples-TableDto-deleteTable-0-groovy">Groovy</a></li>-->
                           <li class=""><a href="#examples-Table-deleteTable-0-objc">Obj-C</a></li>
                           <li class=""><a href="#examples-Table-deleteTable-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Table-deleteTable-0-angular">Angular</a></li>-->
+                          <!--<li class=""><a href="#examples-TableDto-deleteTable-0-angular">Angular</a></li>-->
                           <li class=""><a href="#examples-Table-deleteTable-0-csharp">C#</a></li>
                           <li class=""><a href="#examples-Table-deleteTable-0-php">PHP</a></li>
                           <li class=""><a href="#examples-Table-deleteTable-0-perl">Perl</a></li>
@@ -3694,7 +3694,7 @@ import java.util.*;
 public class TableApiExample {
 
     public static void main(String[] args) {
-        
+
         TableApi apiInstance = new TableApi();
         Long restaurantId = 789; // Long | Restaurant ID
         Long tableId = 789; // Long | Table id to delete
@@ -3727,7 +3727,7 @@ public class TableApiExample {
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Table-deleteTable-0-groovy">
+  <div class="tab-pane" id="examples-TableDto-deleteTable-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-Table-deleteTable-0-objc">
@@ -3768,7 +3768,7 @@ api.deleteTable(restaurantId, tableId, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Table-deleteTable-0-angular">
+                            <!--<div class="tab-pane" id="examples-TableDto-deleteTable-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
                             <div class="tab-pane" id="examples-Table-deleteTable-0-csharp">
@@ -3784,7 +3784,7 @@ namespace Example
     {
         public void main()
         {
-            
+
             var apiInstance = new TableApi();
             var restaurantId = 789;  // Long | Restaurant ID
             var tableId = 789;  // Long | Table id to delete
@@ -3829,7 +3829,7 @@ my $api_instance = WWW::SwaggerClient::TableApi->new();
 my $restaurantId = 789; # Long | Restaurant ID
 my $tableId = 789; # Long | Table id to delete
 
-eval { 
+eval {
     $api_instance->deleteTable(restaurantId => $restaurantId, tableId => $tableId);
 };
 if ($@) {
@@ -3849,7 +3849,7 @@ api_instance = swagger_client.TableApi()
 restaurantId = 789 # Long | Restaurant ID
 tableId = 789 # Long | Table id to delete
 
-try: 
+try:
     # Deletes a table if there are no reservations
     api_instance.delete_table(restaurantId, tableId)
 except ApiException as e:
@@ -3963,10 +3963,10 @@ except ApiException as e:
                           <li class="active"><a href="#examples-Table-getTableInfo-0-curl">Curl</a></li>
                           <li class=""><a href="#examples-Table-getTableInfo-0-java">Java</a></li>
                           <li class=""><a href="#examples-Table-getTableInfo-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Table-getTableInfo-0-groovy">Groovy</a></li>-->
+                          <!--<li class=""><a href="#examples-TableDto-getTableInfo-0-groovy">Groovy</a></li>-->
                           <li class=""><a href="#examples-Table-getTableInfo-0-objc">Obj-C</a></li>
                           <li class=""><a href="#examples-Table-getTableInfo-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Table-getTableInfo-0-angular">Angular</a></li>-->
+                          <!--<li class=""><a href="#examples-TableDto-getTableInfo-0-angular">Angular</a></li>-->
                           <li class=""><a href="#examples-Table-getTableInfo-0-csharp">C#</a></li>
                           <li class=""><a href="#examples-Table-getTableInfo-0-php">PHP</a></li>
                           <li class=""><a href="#examples-Table-getTableInfo-0-perl">Perl</a></li>
@@ -3989,7 +3989,7 @@ import java.util.*;
 public class TableApiExample {
 
     public static void main(String[] args) {
-        
+
         TableApi apiInstance = new TableApi();
         Long restaurantId = 789; // Long | Restaurant ID
         Long tableId = 789; // Long | ID of table to return
@@ -4024,7 +4024,7 @@ public class TableApiExample {
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Table-getTableInfo-0-groovy">
+  <div class="tab-pane" id="examples-TableDto-getTableInfo-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-Table-getTableInfo-0-objc">
@@ -4068,7 +4068,7 @@ api.getTableInfo(restaurantId, tableId, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Table-getTableInfo-0-angular">
+                            <!--<div class="tab-pane" id="examples-TableDto-getTableInfo-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
                             <div class="tab-pane" id="examples-Table-getTableInfo-0-csharp">
@@ -4084,7 +4084,7 @@ namespace Example
     {
         public void main()
         {
-            
+
             var apiInstance = new TableApi();
             var restaurantId = 789;  // Long | Restaurant ID
             var tableId = 789;  // Long | ID of table to return
@@ -4131,7 +4131,7 @@ my $api_instance = WWW::SwaggerClient::TableApi->new();
 my $restaurantId = 789; # Long | Restaurant ID
 my $tableId = 789; # Long | ID of table to return
 
-eval { 
+eval {
     my $result = $api_instance->getTableInfo(restaurantId => $restaurantId, tableId => $tableId);
     print Dumper($result);
 };
@@ -4152,7 +4152,7 @@ api_instance = swagger_client.TableApi()
 restaurantId = 789 # Long | Restaurant ID
 tableId = 789 # Long | ID of table to return
 
-try: 
+try:
     # Return table info
     api_response = api_instance.get_table_info(restaurantId, tableId)
     pprint(api_response)
@@ -4310,10 +4310,10 @@ except ApiException as e:
                           <li class="active"><a href="#examples-Table-getTables-0-curl">Curl</a></li>
                           <li class=""><a href="#examples-Table-getTables-0-java">Java</a></li>
                           <li class=""><a href="#examples-Table-getTables-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Table-getTables-0-groovy">Groovy</a></li>-->
+                          <!--<li class=""><a href="#examples-TableDto-getTableDtos-0-groovy">Groovy</a></li>-->
                           <li class=""><a href="#examples-Table-getTables-0-objc">Obj-C</a></li>
                           <li class=""><a href="#examples-Table-getTables-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Table-getTables-0-angular">Angular</a></li>-->
+                          <!--<li class=""><a href="#examples-TableDto-getTableDtos-0-angular">Angular</a></li>-->
                           <li class=""><a href="#examples-Table-getTables-0-csharp">C#</a></li>
                           <li class=""><a href="#examples-Table-getTables-0-php">PHP</a></li>
                           <li class=""><a href="#examples-Table-getTables-0-perl">Perl</a></li>
@@ -4336,7 +4336,7 @@ import java.util.*;
 public class TableApiExample {
 
     public static void main(String[] args) {
-        
+
         TableApi apiInstance = new TableApi();
         Long restaurantId = 789; // Long | Restaurant ID
         try {
@@ -4369,7 +4369,7 @@ public class TableApiExample {
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Table-getTables-0-groovy">
+  <div class="tab-pane" id="examples-TableDto-getTableDtos-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-Table-getTables-0-objc">
@@ -4409,7 +4409,7 @@ api.getTables(restaurantId, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Table-getTables-0-angular">
+                            <!--<div class="tab-pane" id="examples-TableDto-getTableDtos-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
                             <div class="tab-pane" id="examples-Table-getTables-0-csharp">
@@ -4425,7 +4425,7 @@ namespace Example
     {
         public void main()
         {
-            
+
             var apiInstance = new TableApi();
             var restaurantId = 789;  // Long | Restaurant ID
 
@@ -4469,7 +4469,7 @@ use WWW::SwaggerClient::TableApi;
 my $api_instance = WWW::SwaggerClient::TableApi->new();
 my $restaurantId = 789; # Long | Restaurant ID
 
-eval { 
+eval {
     my $result = $api_instance->getTables(restaurantId => $restaurantId);
     print Dumper($result);
 };
@@ -4489,7 +4489,7 @@ from pprint import pprint
 api_instance = swagger_client.TableApi()
 restaurantId = 789 # Long | Restaurant ID
 
-try: 
+try:
     # Return a list of tables
     api_response = api_instance.get_tables(restaurantId)
     pprint(api_response)
@@ -5106,7 +5106,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
+
 	// load the styles
 	var content = __webpack_require__(3);
 	if(typeof content === 'string') content = [[module.id, content, '']];
@@ -5133,11 +5133,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	exports = module.exports = __webpack_require__(4)();
 	// imports
-	
-	
+
+
 	// module
 	exports.push([module.id, ".json-formatter-row {\n  font-family: monospace;\n}\n.json-formatter-row,\n.json-formatter-row a,\n.json-formatter-row a:hover {\n  color: black;\n  text-decoration: none;\n}\n.json-formatter-row .json-formatter-row {\n  margin-left: 1rem;\n}\n.json-formatter-row .json-formatter-children.json-formatter-empty {\n  opacity: 0.5;\n  margin-left: 1rem;\n}\n.json-formatter-row .json-formatter-children.json-formatter-empty:after {\n  display: none;\n}\n.json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-object:after {\n  content: \"No properties\";\n}\n.json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-array:after {\n  content: \"[]\";\n}\n.json-formatter-row .json-formatter-string {\n  color: green;\n  white-space: pre;\n  word-wrap: break-word;\n}\n.json-formatter-row .json-formatter-number {\n  color: blue;\n}\n.json-formatter-row .json-formatter-boolean {\n  color: red;\n}\n.json-formatter-row .json-formatter-null {\n  color: #855A00;\n}\n.json-formatter-row .json-formatter-undefined {\n  color: #ca0b69;\n}\n.json-formatter-row .json-formatter-function {\n  color: #FF20ED;\n}\n.json-formatter-row .json-formatter-date {\n  background-color: rgba(0, 0, 0, 0.05);\n}\n.json-formatter-row .json-formatter-url {\n  text-decoration: underline;\n  color: blue;\n  cursor: pointer;\n}\n.json-formatter-row .json-formatter-bracket {\n  color: blue;\n}\n.json-formatter-row .json-formatter-key {\n  color: #00008B;\n  cursor: pointer;\n  padding-right: 0.2rem;\n}\n.json-formatter-row .json-formatter-constructor-name {\n  cursor: pointer;\n}\n.json-formatter-row .json-formatter-toggler {\n  line-height: 1.2rem;\n  font-size: 0.7rem;\n  vertical-align: middle;\n  opacity: 0.6;\n  cursor: pointer;\n  padding-right: 0.2rem;\n}\n.json-formatter-row .json-formatter-toggler:after {\n  display: inline-block;\n  transition: transform 100ms ease-in;\n  content: \"\\25BA\";\n}\n.json-formatter-row > a > .json-formatter-preview-text {\n  opacity: 0;\n  transition: opacity 0.15s ease-in;\n  font-style: italic;\n}\n.json-formatter-row:hover > a > .json-formatter-preview-text {\n  opacity: 0.6;\n}\n.json-formatter-row.json-formatter-open > .json-formatter-toggler-link .json-formatter-toggler:after {\n  transform: rotate(90deg);\n}\n.json-formatter-row.json-formatter-open > .json-formatter-children:after {\n  display: inline-block;\n}\n.json-formatter-row.json-formatter-open > a > .json-formatter-preview-text {\n  display: none;\n}\n.json-formatter-row.json-formatter-open.json-formatter-empty:after {\n  display: block;\n}\n.json-formatter-dark.json-formatter-row {\n  font-family: monospace;\n}\n.json-formatter-dark.json-formatter-row,\n.json-formatter-dark.json-formatter-row a,\n.json-formatter-dark.json-formatter-row a:hover {\n  color: white;\n  text-decoration: none;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-row {\n  margin-left: 1rem;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty {\n  opacity: 0.5;\n  margin-left: 1rem;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty:after {\n  display: none;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-object:after {\n  content: \"No properties\";\n}\n.json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-array:after {\n  content: \"[]\";\n}\n.json-formatter-dark.json-formatter-row .json-formatter-string {\n  color: #31F031;\n  white-space: pre;\n  word-wrap: break-word;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-number {\n  color: #66C2FF;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-boolean {\n  color: #EC4242;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-null {\n  color: #EEC97D;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-undefined {\n  color: #ef8fbe;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-function {\n  color: #FD48CB;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-date {\n  background-color: rgba(255, 255, 255, 0.05);\n}\n.json-formatter-dark.json-formatter-row .json-formatter-url {\n  text-decoration: underline;\n  color: #027BFF;\n  cursor: pointer;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-bracket {\n  color: #9494FF;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-key {\n  color: #23A0DB;\n  cursor: pointer;\n  padding-right: 0.2rem;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-constructor-name {\n  cursor: pointer;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-toggler {\n  line-height: 1.2rem;\n  font-size: 0.7rem;\n  vertical-align: middle;\n  opacity: 0.6;\n  cursor: pointer;\n  padding-right: 0.2rem;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-toggler:after {\n  display: inline-block;\n  transition: transform 100ms ease-in;\n  content: \"\\25BA\";\n}\n.json-formatter-dark.json-formatter-row > a > .json-formatter-preview-text {\n  opacity: 0;\n  transition: opacity 0.15s ease-in;\n  font-style: italic;\n}\n.json-formatter-dark.json-formatter-row:hover > a > .json-formatter-preview-text {\n  opacity: 0.6;\n}\n.json-formatter-dark.json-formatter-row.json-formatter-open > .json-formatter-toggler-link .json-formatter-toggler:after {\n  transform: rotate(90deg);\n}\n.json-formatter-dark.json-formatter-row.json-formatter-open > .json-formatter-children:after {\n  display: inline-block;\n}\n.json-formatter-dark.json-formatter-row.json-formatter-open > a > .json-formatter-preview-text {\n  display: none;\n}\n.json-formatter-dark.json-formatter-row.json-formatter-open.json-formatter-empty:after {\n  display: block;\n}\n", "", {"version":3,"sources":["/./src/style.less","/./src/style.less"],"names":[],"mappings":"AA0GA;EA3FE,uBAAA;CCbD;ADcC;;;EACE,aAAA;EACA,sBAAA;CCVH;ADkGD;EApFI,kBAAA;CCXH;ADeG;EACE,aAAA;EACA,kBAAA;CCbL;ADeK;EAAU,cAAA;CCZf;ADaK;EAAgC,yBAAA;CCVrC;ADWK;EAA+B,cAAA;CCRpC;ADkFD;EArEI,aAAA;EACA,iBAAA;EACA,sBAAA;CCVH;AD6ED;EAjE2B,YAAA;CCT1B;AD0ED;EAhE4B,WAAA;CCP3B;ADuED;EA/DyB,eAAA;CCLxB;ADoED;EA9D8B,eAAA;CCH7B;ADiED;EA7D6B,eAAA;CCD5B;AD8DD;EA5DyB,sCAAA;CCCxB;AD2DD;EA1DI,2BAAA;EACA,YAAA;EACA,gBAAA;CCEH;ADsDD;EArD4B,YAAA;CCE3B;ADmDD;EAnDI,eAAA;EACA,gBAAA;EACA,sBAAA;CCGH;AD8CD;EA9CI,gBAAA;CCGH;AD2CD;EA1CI,oBAAA;EACA,kBAAA;EACA,uBAAA;EACA,aAAA;EACA,gBAAA;EACA,sBAAA;CCEH;ADAG;EACE,sBAAA;EACA,oCAAA;EACA,iBAAA;CCEL;AD8BD;EA1BI,WAAA;EACA,kCAAA;EACA,mBAAA;CCDH;ADGC;EACE,aAAA;CCDH;ADKC;EAEI,yBAAA;CCJL;ADEC;EAKI,sBAAA;CCJL;ADDC;EAQI,cAAA;CCJL;ADMG;EACE,eAAA;CCJL;ADeD;EAhGE,uBAAA;CCoFD;ADnFC;;;EACE,aAAA;EACA,sBAAA;CCuFH;ADMD;EAzFI,kBAAA;CCsFH;ADlFG;EACE,aAAA;EACA,kBAAA;CCoFL;ADlFK;EAAU,cAAA;CCqFf;ADpFK;EAAgC,yBAAA;CCuFrC;ADtFK;EAA+B,cAAA;CCyFpC;ADVD;EA1EI,eAAA;EACA,iBAAA;EACA,sBAAA;CCuFH;ADfD;EAtE2B,eAAA;CCwF1B;ADlBD;EArE4B,eAAA;CC0F3B;ADrBD;EApEyB,eAAA;CC4FxB;ADxBD;EAnE8B,eAAA;CC8F7B;AD3BD;EAlE6B,eAAA;CCgG5B;AD9BD;EAjEyB,4CAAA;CCkGxB;ADjCD;EA/DI,2BAAA;EACA,eAAA;EACA,gBAAA;CCmGH;ADtCD;EA1D4B,eAAA;CCmG3B;ADzCD;EAxDI,eAAA;EACA,gBAAA;EACA,sBAAA;CCoGH;AD9CD;EAnDI,gBAAA;CCoGH;ADjDD;EA/CI,oBAAA;EACA,kBAAA;EACA,uBAAA;EACA,aAAA;EACA,gBAAA;EACA,sBAAA;CCmGH;ADjGG;EACE,sBAAA;EACA,oCAAA;EACA,iBAAA;CCmGL;AD9DD;EA/BI,WAAA;EACA,kCAAA;EACA,mBAAA;CCgGH;AD9FC;EACE,aAAA;CCgGH;AD5FC;EAEI,yBAAA;CC6FL;AD/FC;EAKI,sBAAA;CC6FL;ADlGC;EAQI,cAAA;CC6FL;AD3FG;EACE,eAAA;CC6FL","file":"style.less","sourcesContent":[".theme(\n  @default-color: black,\n  @string-color: green,\n  @number-color: blue,\n  @boolean-color: red,\n  @null-color: #855A00,\n  @undefined-color: rgb(202, 11, 105),\n  @function-color: #FF20ED,\n  @rotate-time: 100ms,\n  @toggler-opacity: 0.6,\n  @toggler-color: #45376F,\n  @bracket-color: blue,\n  @key-color: #00008B,\n  @url-color: blue ){\n\n  font-family: monospace;\n  &, a, a:hover {\n    color: @default-color;\n    text-decoration: none;\n  }\n\n  .json-formatter-row {\n    margin-left: 1rem;\n  }\n\n  .json-formatter-children {\n    &.json-formatter-empty {\n      opacity: 0.5;\n      margin-left: 1rem;\n\n      &:after { display: none; }\n      &.json-formatter-object:after { content: \"No properties\"; }\n      &.json-formatter-array:after { content: \"[]\"; }\n    }\n  }\n\n  .json-formatter-string {\n    color: @string-color;\n    white-space: pre;\n    word-wrap: break-word;\n  }\n  .json-formatter-number { color: @number-color; }\n  .json-formatter-boolean { color: @boolean-color; }\n  .json-formatter-null { color: @null-color; }\n  .json-formatter-undefined { color: @undefined-color; }\n  .json-formatter-function { color: @function-color; }\n  .json-formatter-date { background-color: fade(@default-color, 5%); }\n  .json-formatter-url {\n    text-decoration: underline;\n    color: @url-color;\n    cursor: pointer;\n  }\n\n  .json-formatter-bracket { color: @bracket-color; }\n  .json-formatter-key {\n    color: @key-color;\n    cursor: pointer;\n    padding-right: 0.2rem;\n  }\n  .json-formatter-constructor-name {\n    cursor: pointer;\n  }\n\n  .json-formatter-toggler {\n    line-height: 1.2rem;\n    font-size: 0.7rem;\n    vertical-align: middle;\n    opacity: @toggler-opacity;\n    cursor: pointer;\n    padding-right: 0.2rem;\n\n    &:after {\n      display: inline-block;\n      transition: transform @rotate-time ease-in;\n      content: \"►\";\n    }\n  }\n\n  // Inline preview on hover (optional)\n  > a > .json-formatter-preview-text {\n    opacity: 0;\n    transition: opacity .15s ease-in;\n    font-style: italic;\n  }\n  &:hover > a > .json-formatter-preview-text {\n    opacity: 0.6;\n  }\n\n  // Open state\n  &.json-formatter-open {\n    > .json-formatter-toggler-link .json-formatter-toggler:after{\n      transform: rotate(90deg);\n    }\n    > .json-formatter-children:after {\n      display: inline-block;\n    }\n    > a > .json-formatter-preview-text {\n      display: none;\n    }\n    &.json-formatter-empty:after {\n      display: block;\n    }\n  }\n}\n\n// Default theme\n.json-formatter-row {\n  .theme();\n}\n\n// Dark theme\n.json-formatter-dark.json-formatter-row {\n  .theme(\n    @default-color: white,\n    @string-color: #31F031,\n    @number-color: #66C2FF,\n    @boolean-color: #EC4242,\n    @null-color: #EEC97D,\n    @undefined-color: rgb(239, 143, 190),\n    @function-color: #FD48CB,\n    @rotate-time: 100ms,\n    @toggler-opacity: 0.6,\n    @toggler-color: #45376F,\n    @bracket-color: #9494FF,\n    @key-color: #23A0DB,\n    @url-color: #027BFF);\n}\n",".json-formatter-row {\n  font-family: monospace;\n}\n.json-formatter-row,\n.json-formatter-row a,\n.json-formatter-row a:hover {\n  color: black;\n  text-decoration: none;\n}\n.json-formatter-row .json-formatter-row {\n  margin-left: 1rem;\n}\n.json-formatter-row .json-formatter-children.json-formatter-empty {\n  opacity: 0.5;\n  margin-left: 1rem;\n}\n.json-formatter-row .json-formatter-children.json-formatter-empty:after {\n  display: none;\n}\n.json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-object:after {\n  content: \"No properties\";\n}\n.json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-array:after {\n  content: \"[]\";\n}\n.json-formatter-row .json-formatter-string {\n  color: green;\n  white-space: pre;\n  word-wrap: break-word;\n}\n.json-formatter-row .json-formatter-number {\n  color: blue;\n}\n.json-formatter-row .json-formatter-boolean {\n  color: red;\n}\n.json-formatter-row .json-formatter-null {\n  color: #855A00;\n}\n.json-formatter-row .json-formatter-undefined {\n  color: #ca0b69;\n}\n.json-formatter-row .json-formatter-function {\n  color: #FF20ED;\n}\n.json-formatter-row .json-formatter-date {\n  background-color: rgba(0, 0, 0, 0.05);\n}\n.json-formatter-row .json-formatter-url {\n  text-decoration: underline;\n  color: blue;\n  cursor: pointer;\n}\n.json-formatter-row .json-formatter-bracket {\n  color: blue;\n}\n.json-formatter-row .json-formatter-key {\n  color: #00008B;\n  cursor: pointer;\n  padding-right: 0.2rem;\n}\n.json-formatter-row .json-formatter-constructor-name {\n  cursor: pointer;\n}\n.json-formatter-row .json-formatter-toggler {\n  line-height: 1.2rem;\n  font-size: 0.7rem;\n  vertical-align: middle;\n  opacity: 0.6;\n  cursor: pointer;\n  padding-right: 0.2rem;\n}\n.json-formatter-row .json-formatter-toggler:after {\n  display: inline-block;\n  transition: transform 100ms ease-in;\n  content: \"►\";\n}\n.json-formatter-row > a > .json-formatter-preview-text {\n  opacity: 0;\n  transition: opacity 0.15s ease-in;\n  font-style: italic;\n}\n.json-formatter-row:hover > a > .json-formatter-preview-text {\n  opacity: 0.6;\n}\n.json-formatter-row.json-formatter-open > .json-formatter-toggler-link .json-formatter-toggler:after {\n  transform: rotate(90deg);\n}\n.json-formatter-row.json-formatter-open > .json-formatter-children:after {\n  display: inline-block;\n}\n.json-formatter-row.json-formatter-open > a > .json-formatter-preview-text {\n  display: none;\n}\n.json-formatter-row.json-formatter-open.json-formatter-empty:after {\n  display: block;\n}\n.json-formatter-dark.json-formatter-row {\n  font-family: monospace;\n}\n.json-formatter-dark.json-formatter-row,\n.json-formatter-dark.json-formatter-row a,\n.json-formatter-dark.json-formatter-row a:hover {\n  color: white;\n  text-decoration: none;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-row {\n  margin-left: 1rem;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty {\n  opacity: 0.5;\n  margin-left: 1rem;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty:after {\n  display: none;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-object:after {\n  content: \"No properties\";\n}\n.json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-array:after {\n  content: \"[]\";\n}\n.json-formatter-dark.json-formatter-row .json-formatter-string {\n  color: #31F031;\n  white-space: pre;\n  word-wrap: break-word;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-number {\n  color: #66C2FF;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-boolean {\n  color: #EC4242;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-null {\n  color: #EEC97D;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-undefined {\n  color: #ef8fbe;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-function {\n  color: #FD48CB;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-date {\n  background-color: rgba(255, 255, 255, 0.05);\n}\n.json-formatter-dark.json-formatter-row .json-formatter-url {\n  text-decoration: underline;\n  color: #027BFF;\n  cursor: pointer;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-bracket {\n  color: #9494FF;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-key {\n  color: #23A0DB;\n  cursor: pointer;\n  padding-right: 0.2rem;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-constructor-name {\n  cursor: pointer;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-toggler {\n  line-height: 1.2rem;\n  font-size: 0.7rem;\n  vertical-align: middle;\n  opacity: 0.6;\n  cursor: pointer;\n  padding-right: 0.2rem;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-toggler:after {\n  display: inline-block;\n  transition: transform 100ms ease-in;\n  content: \"►\";\n}\n.json-formatter-dark.json-formatter-row > a > .json-formatter-preview-text {\n  opacity: 0;\n  transition: opacity 0.15s ease-in;\n  font-style: italic;\n}\n.json-formatter-dark.json-formatter-row:hover > a > .json-formatter-preview-text {\n  opacity: 0.6;\n}\n.json-formatter-dark.json-formatter-row.json-formatter-open > .json-formatter-toggler-link .json-formatter-toggler:after {\n  transform: rotate(90deg);\n}\n.json-formatter-dark.json-formatter-row.json-formatter-open > .json-formatter-children:after {\n  display: inline-block;\n}\n.json-formatter-dark.json-formatter-row.json-formatter-open > a > .json-formatter-preview-text {\n  display: none;\n}\n.json-formatter-dark.json-formatter-row.json-formatter-open.json-formatter-empty:after {\n  display: block;\n}\n"],"sourceRoot":"webpack://"}]);
-	
+
 	// exports
 
 
@@ -5152,7 +5152,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	// css base code, injected by the css-loader
 	module.exports = function() {
 		var list = [];
-	
+
 		// return the list of modules as css string
 		list.toString = function toString() {
 			var result = [];
@@ -5166,7 +5166,7 @@ return /******/ (function(modules) { // webpackBootstrap
 			}
 			return result.join("");
 		};
-	
+
 		// import a list of modules into the list
 		list.i = function(modules, mediaQuery) {
 			if(typeof modules === "string")
@@ -5222,23 +5222,23 @@ return /******/ (function(modules) { // webpackBootstrap
 		singletonElement = null,
 		singletonCounter = 0,
 		styleElementsInsertedAtTop = [];
-	
+
 	module.exports = function(list, options) {
 		if(false) {
 			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
 		}
-	
+
 		options = options || {};
 		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
 		// tags it will allow on a page
 		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
-	
+
 		// By default, add <style> tags to the bottom of <head>.
 		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
-	
+
 		var styles = listToStyles(list);
 		addStylesToDom(styles, options);
-	
+
 		return function update(newList) {
 			var mayRemove = [];
 			for(var i = 0; i < styles.length; i++) {
@@ -5261,7 +5261,7 @@ return /******/ (function(modules) { // webpackBootstrap
 			}
 		};
 	}
-	
+
 	function addStylesToDom(styles, options) {
 		for(var i = 0; i < styles.length; i++) {
 			var item = styles[i];
@@ -5283,7 +5283,7 @@ return /******/ (function(modules) { // webpackBootstrap
 			}
 		}
 	}
-	
+
 	function listToStyles(list) {
 		var styles = [];
 		var newStyles = {};
@@ -5301,7 +5301,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		}
 		return styles;
 	}
-	
+
 	function insertStyleElement(options, styleElement) {
 		var head = getHeadElement();
 		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
@@ -5320,7 +5320,7 @@ return /******/ (function(modules) { // webpackBootstrap
 			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
 		}
 	}
-	
+
 	function removeStyleElement(styleElement) {
 		styleElement.parentNode.removeChild(styleElement);
 		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
@@ -5328,24 +5328,24 @@ return /******/ (function(modules) { // webpackBootstrap
 			styleElementsInsertedAtTop.splice(idx, 1);
 		}
 	}
-	
+
 	function createStyleElement(options) {
 		var styleElement = document.createElement("style");
 		styleElement.type = "text/css";
 		insertStyleElement(options, styleElement);
 		return styleElement;
 	}
-	
+
 	function createLinkElement(options) {
 		var linkElement = document.createElement("link");
 		linkElement.rel = "stylesheet";
 		insertStyleElement(options, linkElement);
 		return linkElement;
 	}
-	
+
 	function addStyle(obj, options) {
 		var styleElement, update, remove;
-	
+
 		if (options.singleton) {
 			var styleIndex = singletonCounter++;
 			styleElement = singletonElement || (singletonElement = createStyleElement(options));
@@ -5371,9 +5371,9 @@ return /******/ (function(modules) { // webpackBootstrap
 				removeStyleElement(styleElement);
 			};
 		}
-	
+
 		update(obj);
-	
+
 		return function updateStyle(newObj) {
 			if(newObj) {
 				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
@@ -5384,19 +5384,19 @@ return /******/ (function(modules) { // webpackBootstrap
 			}
 		};
 	}
-	
+
 	var replaceText = (function () {
 		var textStore = [];
-	
+
 		return function (index, replacement) {
 			textStore[index] = replacement;
 			return textStore.filter(Boolean).join('\n');
 		};
 	})();
-	
+
 	function applyToSingletonTag(styleElement, index, remove, obj) {
 		var css = remove ? "" : obj.css;
-	
+
 		if (styleElement.styleSheet) {
 			styleElement.styleSheet.cssText = replaceText(index, css);
 		} else {
@@ -5410,15 +5410,15 @@ return /******/ (function(modules) { // webpackBootstrap
 			}
 		}
 	}
-	
+
 	function applyToTag(styleElement, obj) {
 		var css = obj.css;
 		var media = obj.media;
-	
+
 		if(media) {
 			styleElement.setAttribute("media", media)
 		}
-	
+
 		if(styleElement.styleSheet) {
 			styleElement.styleSheet.cssText = css;
 		} else {
@@ -5428,22 +5428,22 @@ return /******/ (function(modules) { // webpackBootstrap
 			styleElement.appendChild(document.createTextNode(css));
 		}
 	}
-	
+
 	function updateLink(linkElement, obj) {
 		var css = obj.css;
 		var sourceMap = obj.sourceMap;
-	
+
 		if(sourceMap) {
 			// http://stackoverflow.com/a/26603875
 			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
 		}
-	
+
 		var blob = new Blob([css], { type: "text/css" });
-	
+
 		var oldSrc = linkElement.href;
-	
+
 		linkElement.href = URL.createObjectURL(blob);
-	
+
 		if(oldSrc)
 			URL.revokeObjectURL(oldSrc);
 	}

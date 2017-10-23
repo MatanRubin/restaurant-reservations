@@ -1,8 +1,8 @@
 swagger: "2.0"
 info:
-  description: "SolarEdge's Restaurant Reservation API allows restaurant owners easily manage reservations in their restaurants."
+  description: "SolarEdge's RestaurantDto ReservationDto API allows restaurant owners easily manage reservations in their restaurants."
   version: "1.0.0"
-  title: "SolarEdge Restaurant Reservation API"
+  title: "SolarEdge RestaurantDto ReservationDto API"
   contact:
     email: "matan.rubin@solaredge.com"
   license:
@@ -11,12 +11,12 @@ info:
 host: "restaurants.solaredge.com"
 basePath: "/api/"
 tags:
-- name: "Restaurant"
-  description: "Restaurant related API endpoints"
-- name: "Table"
-  description: "Table related API endpoints"
-- name: "Reservation"
-  description: "Reservation related API endpoints"
+- name: "RestaurantDto"
+  description: "RestaurantDto related API endpoints"
+- name: "TableDto"
+  description: "TableDto related API endpoints"
+- name: "ReservationDto"
+  description: "ReservationDto related API endpoints"
 schemes:
 - "http"
 
@@ -25,7 +25,7 @@ paths:
   /restaurants:
     get:
       tags:
-      - "Restaurant"
+      - "RestaurantDto"
       summary: "Return a list of restaurants"
       description: ""
       operationId: "getRestaurants"
@@ -42,7 +42,7 @@ paths:
               $ref: "#/definitions/RestaurantInfoResponse"
     post:
       tags:
-      - "Restaurant"
+      - "RestaurantDto"
       summary: "Add a new restaurant"
       description: ""
       operationId: "addRestaurant"
@@ -59,7 +59,7 @@ paths:
           $ref: "#/definitions/AddRestaurantRequest"
       responses:
         201:
-          description: "Restaurant successfully added"
+          description: "RestaurantDto successfully added"
           schema:
             $ref: "#/definitions/AddRestaurantResponse"
         400:
@@ -67,7 +67,7 @@ paths:
   /restaurants/{restaurantId}:
     get:
       tags:
-      - "Restaurant"
+      - "RestaurantDto"
       summary: "Return restaurant info"
       description: ""
       operationId: "getRestaurantInfo"
@@ -90,10 +90,10 @@ paths:
         400:
           description: "Invalid ID supplied"
         404:
-          description: "Restaurant not found"
+          description: "RestaurantDto not found"
     delete:
       tags:
-      - "Restaurant"
+      - "RestaurantDto"
       summary: "Deletes a restaurant if there are no reservations"
       description: ""
       operationId: "deleteRestaurant"
@@ -102,7 +102,7 @@ paths:
       parameters:
       - name: "restaurantId"
         in: "path"
-        description: "Restaurant id to delete"
+        description: "RestaurantDto id to delete"
         required: true
         type: "integer"
         format: "int64"
@@ -110,15 +110,15 @@ paths:
         400:
           description: "Invalid ID supplied"
         404:
-          description: "Restaurant not found"
+          description: "RestaurantDto not found"
 
   /restaurant/{restaurantId}/tables:
     get:
       tags:
-      - "Table"
+      - "TableDto"
       summary: "Return a list of tables"
       description: ""
-      operationId: "getTables"
+      operationId: "getTableDtos"
       consumes:
       - "application/json"
       produces:
@@ -126,7 +126,7 @@ paths:
       parameters:
       - name: "restaurantId"
         in: "path"
-        description: "Restaurant ID"
+        description: "RestaurantDto ID"
         required: true
         type: "integer"
         format: "int64"
@@ -139,7 +139,7 @@ paths:
               $ref: "#/definitions/TableInfoResponse"
     post:
       tags:
-      - "Table"
+      - "TableDto"
       summary: "Add a new table"
       description: ""
       operationId: "addTable"
@@ -156,13 +156,13 @@ paths:
           $ref: "#/definitions/AddTableRequest"
       - name: "restaurantId"
         in: "path"
-        description: "Restaurant ID"
+        description: "RestaurantDto ID"
         required: true
         type: "integer"
         format: "int64"
       responses:
         201:
-          description: "Table successfully added"
+          description: "TableDto successfully added"
           schema:
             $ref: "#/definitions/AddTableResponse"
         400:
@@ -170,7 +170,7 @@ paths:
   /restaurant/{restaurantId}/tables/{tableId}:
     get:
       tags:
-      - "Table"
+      - "TableDto"
       summary: "Return table info"
       description: ""
       operationId: "getTableInfo"
@@ -181,7 +181,7 @@ paths:
       parameters:
       - name: "restaurantId"
         in: "path"
-        description: "Restaurant ID"
+        description: "RestaurantDto ID"
         required: true
         type: "integer"
         format: "int64"
@@ -199,10 +199,10 @@ paths:
         400:
           description: "Invalid ID supplied"
         404:
-          description: "Table not found"
+          description: "TableDto not found"
     delete:
       tags:
-      - "Table"
+      - "TableDto"
       summary: "Deletes a table if there are no reservations"
       description: ""
       operationId: "deleteTable"
@@ -211,13 +211,13 @@ paths:
       parameters:
       - name: "restaurantId"
         in: "path"
-        description: "Restaurant ID"
+        description: "RestaurantDto ID"
         required: true
         type: "integer"
         format: "int64"
       - name: "tableId"
         in: "path"
-        description: "Table id to delete"
+        description: "TableDto id to delete"
         required: true
         type: "integer"
         format: "int64"
@@ -225,12 +225,12 @@ paths:
         400:
           description: "Invalid ID supplied"
         404:
-          description: "Table not found"
+          description: "TableDto not found"
 
   /restaurants/{restaurantId}/reservations:
     get:
       tags:
-      - "Reservation"
+      - "ReservationDto"
       summary: "Return a list of reservations"
       description: ""
       operationId: "getReservations"
@@ -241,7 +241,7 @@ paths:
       parameters:
       - name: "restaurantId"
         in: "path"
-        description: "Restaurant ID"
+        description: "RestaurantDto ID"
         required: true
         type: "integer"
         format: "int64"
@@ -254,7 +254,7 @@ paths:
               $ref: "#/definitions/ReservationInfoResponse"
     post:
       tags:
-      - "Reservation"
+      - "ReservationDto"
       summary: "Add a new restaurant"
       description: ""
       operationId: "addReservation"
@@ -271,7 +271,7 @@ paths:
           $ref: "#/definitions/AddReservationRequest"
       responses:
         201:
-          description: "Reservation successfully added"
+          description: "ReservationDto successfully added"
           schema:
             $ref: "#/definitions/AddReservationResponse"
         400:
@@ -280,7 +280,7 @@ paths:
   /restaurants/{restaurantId}/reservations/{reservationId}:
     get:
       tags:
-      - "Reservation"
+      - "ReservationDto"
       summary: "Return restaurant info"
       description: ""
       operationId: "getReservationInfo"
@@ -309,10 +309,10 @@ paths:
         400:
           description: "Invalid ID supplied"
         404:
-          description: "Reservation not found"
+          description: "ReservationDto not found"
     delete:
       tags:
-      - "Reservation"
+      - "ReservationDto"
       summary: "Deletes a restaurant if there are no reservations"
       description: ""
       operationId: "deleteReservation"
@@ -321,7 +321,7 @@ paths:
       parameters:
       - name: "restaurantId"
         in: "path"
-        description: "Reservation id to delete"
+        description: "ReservationDto id to delete"
         required: true
         type: "integer"
         format: "int64"
@@ -335,7 +335,7 @@ paths:
         400:
           description: "Invalid ID supplied"
         404:
-          description: "Reservation not found"
+          description: "ReservationDto not found"
 
 # . . . . . . . . . . . .  Defenitions . . . . . . . . . . . #
 definitions:

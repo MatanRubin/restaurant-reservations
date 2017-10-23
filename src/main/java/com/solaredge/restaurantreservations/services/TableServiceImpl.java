@@ -1,0 +1,46 @@
+package com.solaredge.restaurantreservations.services;
+
+import com.solaredge.restaurantreservations.api.model.TableDto;
+import com.solaredge.restaurantreservations.domain.Table;
+import com.solaredge.restaurantreservations.mappers.TableMapper;
+import com.solaredge.restaurantreservations.repositories.TableRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+@Service
+public class TableServiceImpl implements TableService {
+    private final TableRepository tableRepository;
+
+    @Autowired
+    public TableServiceImpl(TableRepository tableRepository) {
+        this.tableRepository = tableRepository;
+    }
+
+    @Override
+    public TableDto getTableById(Long id) {
+        Optional<Table> tableOptional = tableRepository.findById(id);
+        return TableMapper.tableToTableDto(tableOptional.get());
+    }
+
+    @Override
+    public Set<TableDto> getAllTables() {
+        return tableRepository.findAll().stream()
+                .map(TableMapper::tableToTableDto)
+                .collect(Collectors.toSet());
+    }
+
+    @Override
+    public TableDto createTable(TableDto tableDto) {
+        Table savedTable = tableRepository.save(TableMapper.tableDtoToTable(tableDto));
+        return TableMapper.tableToTableDto(savedTable);
+    }
+
+    @Override
+    public void deleteTable(TableDto tableDto) {
+        tableRepository.delete(TableMapper.tableDtoToTable(tableDto));
+    }
+}
