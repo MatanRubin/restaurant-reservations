@@ -18,12 +18,15 @@ import java.util.stream.Collectors;
 public class RestaurantServiceImpl implements RestaurantService {
 
     private final RestaurantRepository restaurantRepository;
+    private final TableService tableService;
+
     private final RestaurantMapper restaurantMapper = RestaurantMapper.INSTANCE;
     private final TableMapper tableMapper = TableMapper.INSTANCE;
 
     @Autowired
-    public RestaurantServiceImpl(RestaurantRepository restaurantRepository) {
+    public RestaurantServiceImpl(RestaurantRepository restaurantRepository, TableService tableService) {
         this.restaurantRepository = restaurantRepository;
+        this.tableService = tableService;
     }
 
     @Override
@@ -52,23 +55,16 @@ public class RestaurantServiceImpl implements RestaurantService {
     }
 
     @Override
-    public RestaurantDto addTableToRestaurant(Long restaurantId, TableDto tableDto) {
+    public TableDto addTableToRestaurant(Long restaurantId, TableDto tableDto) {
         Optional<Restaurant> restaurantOptional = restaurantRepository.findById(restaurantId);
         if (!restaurantOptional.isPresent()) {
             // TODO handle errors
         }
-
         Restaurant restaurant = restaurantOptional.get();
-        Set<Table> tables = restaurant.getTables();
-        tables.add(tableMapper.tableDtoToTable(tableDto));
-        Restaurant updatedRestaurant = new Restaurant(
-                restaurant.getId(),
-                restaurant.getName(),
-                restaurant.getAddress(),
-                tables
-        );
 
-        Restaurant savedRestaurant = restaurantRepository.save(updatedRestaurant);
-        return restaurantMapper.restaurantToRestaurantDto(savedRestaurant);
+        TableDto createdTable = tableService.createTable(tableDto);
+        restaurant.addTable(tableMapper.tableDtoToTable(createdTable));
+        restaurantRepository.save(restaurant);
+        return tableDto;
     }
 }

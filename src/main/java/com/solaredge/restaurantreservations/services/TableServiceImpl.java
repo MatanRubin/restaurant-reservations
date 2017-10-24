@@ -41,7 +41,7 @@ public class TableServiceImpl implements TableService {
     }
 
     @Override
-    public void deleteTable(TableDto tableDto) {
-        tableRepository.delete(tableMapper.tableDtoToTable(tableDto));
+    public void deleteTableById(Long id) {
+        tableRepository.deleteById(id);
     }
 }

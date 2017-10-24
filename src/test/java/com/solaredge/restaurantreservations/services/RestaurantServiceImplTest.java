@@ -32,7 +32,7 @@ public class RestaurantServiceImplTest {
     @Before
     public void setUp() throws Exception {
         initMocks(this);
-        restaurantService = new RestaurantServiceImpl(restaurantRepository);
+        restaurantService = new RestaurantServiceImpl(restaurantRepository, tableService);
     }
 
     @Test

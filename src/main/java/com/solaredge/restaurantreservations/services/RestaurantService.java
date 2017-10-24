@@ -11,5 +11,5 @@ public interface RestaurantService {
     Set<RestaurantDto> findAllRestaurants();
     RestaurantDto getRestaurantById(Long id);
     void deleteRestaurant(Long id);
-    RestaurantDto addTableToRestaurant(Long restaurantId, TableDto tableDto);
+    TableDto addTableToRestaurant(Long restaurantId, TableDto tableDto);
 }

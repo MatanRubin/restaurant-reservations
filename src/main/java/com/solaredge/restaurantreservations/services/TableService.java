@@ -8,5 +8,5 @@ public interface TableService {
     TableDto getTableById(Long id);
     Set<TableDto> getAllTables();
     TableDto createTable(TableDto table);
-    void deleteTable(TableDto tableDto);
+    void deleteTableById(Long id);
 }

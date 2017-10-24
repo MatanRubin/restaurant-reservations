@@ -33,8 +33,18 @@ public class TableController {
     @PostMapping("/restaurants/{restaurantId}/tables")
     @ResponseStatus(HttpStatus.CREATED)
     TableDto createTable(@PathVariable Long restaurantId, @RequestBody TableDto tableDto) {
-        RestaurantDto restaurantDto = restaurantService.addTableToRestaurant(restaurantId, tableDto);
-        // TODO do services depend on each other? does adding a table to a restaurant return a table or a restaurant?
-        return null;
+        return restaurantService.addTableToRestaurant(restaurantId, tableDto);
+    }
+
+    @GetMapping("/restaurants/{restaurantId}/tables/{tableId}")
+    @ResponseStatus(HttpStatus.OK)
+    TableDto getTable(@PathVariable Long  restaurantId, @PathVariable Long tableId) {
+        return tableService.getTableById(tableId);
+    }
+
+    @DeleteMapping("/restaurants/{restaurantId}/tables/{tableId}")
+    @ResponseStatus(HttpStatus.OK)
+    void deleteTable(@PathVariable Long  restaurantId, @PathVariable Long tableId) {
+        tableService.deleteTableById(tableId);
     }
 }
