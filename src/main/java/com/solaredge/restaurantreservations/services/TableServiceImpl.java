@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 @Service
 public class TableServiceImpl implements TableService {
     private final TableRepository tableRepository;
+    private final TableMapper tableMapper = TableMapper.INSTANCE;
 
     @Autowired
     public TableServiceImpl(TableRepository tableRepository) {
@@ -23,24 +24,24 @@ public class TableServiceImpl implements TableService {
     @Override
     public TableDto getTableById(Long id) {
         Optional<Table> tableOptional = tableRepository.findById(id);
-        return TableMapper.tableToTableDto(tableOptional.get());
+        return tableMapper.tableToTableDto(tableOptional.get());
     }
 
     @Override
     public Set<TableDto> getAllTables() {
         return tableRepository.findAll().stream()
-                .map(TableMapper::tableToTableDto)
+                .map(tableMapper::tableToTableDto)
                 .collect(Collectors.toSet());
     }
 
     @Override
     public TableDto createTable(TableDto tableDto) {
-        Table savedTable = tableRepository.save(TableMapper.tableDtoToTable(tableDto));
-        return TableMapper.tableToTableDto(savedTable);
+        Table savedTable = tableRepository.save(tableMapper.tableDtoToTable(tableDto));
+        return tableMapper.tableToTableDto(savedTable);
     }
 
     @Override
     public void deleteTable(TableDto tableDto) {
-        tableRepository.delete(TableMapper.tableDtoToTable(tableDto));
+        tableRepository.delete(tableMapper.tableDtoToTable(tableDto));
     }
 }

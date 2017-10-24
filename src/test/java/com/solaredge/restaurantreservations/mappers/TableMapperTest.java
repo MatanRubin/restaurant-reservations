@@ -9,6 +9,8 @@ import static org.junit.Assert.assertEquals;
 
 public class TableMapperTest {
 
+    TableMapper tableMapper = TableMapper.INSTANCE;
+
     @Before
     public void setUp() throws Exception {
     }
@@ -25,7 +27,7 @@ public class TableMapperTest {
         Table table = new Table(1L, "stam", 4);
 
         // when
-        TableDto tableDto = TableMapper.tableToTableDto(table);
+        TableDto tableDto = tableMapper.tableToTableDto(table);
 
         // then
         assertObjectEqualsDto(table, tableDto);
@@ -37,7 +39,7 @@ public class TableMapperTest {
         TableDto tableDto = new TableDto(2L, "stam", 5);
 
         // when
-        Table table = TableMapper.tableDtoToTable(tableDto);
+        Table table = tableMapper.tableDtoToTable(tableDto);
 
         // then
         assertObjectEqualsDto(table, tableDto);

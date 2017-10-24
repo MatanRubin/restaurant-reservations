@@ -4,7 +4,10 @@ import com.solaredge.restaurantreservations.api.model.TableDto;
 import com.solaredge.restaurantreservations.domain.Table;
 
 public class TableMapper {
-    public static TableDto tableToTableDto(Table table) {
+
+    public static final TableMapper INSTANCE = new TableMapper();
+
+    public TableDto tableToTableDto(Table table) {
         if (table == null) {
             return null;
         }
@@ -16,7 +19,7 @@ public class TableMapper {
         );
     }
 
-    public static Table tableDtoToTable(TableDto tableDto) {
+    public Table tableDtoToTable(TableDto tableDto) {
         if (tableDto == null) {
             return null;
         }

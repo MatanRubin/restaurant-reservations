@@ -3,6 +3,7 @@ package com.solaredge.restaurantreservations.mappers;
 import com.solaredge.restaurantreservations.api.model.RestaurantDto;
 import com.solaredge.restaurantreservations.domain.Restaurant;
 
+import java.util.Collections;
 import java.util.HashSet;
 
 public class RestaurantMapper {
@@ -27,7 +28,8 @@ public class RestaurantMapper {
                 new RestaurantDto(
                         restaurant.getId(),
                         restaurant.getName(),
-                        restaurant.getAddress()
+                        restaurant.getAddress(),
+                        Collections.emptySet()
                 );
     }
 }
