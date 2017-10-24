@@ -1,6 +1,5 @@
 package com.solaredge.restaurantreservations.controllers;
 
-import com.solaredge.restaurantreservations.api.model.RestaurantDto;
 import com.solaredge.restaurantreservations.api.model.TableDto;
 import com.solaredge.restaurantreservations.api.model.TableSetDto;
 import com.solaredge.restaurantreservations.mappers.RestaurantMapper;
@@ -45,6 +44,7 @@ public class TableController {
     @DeleteMapping("/restaurants/{restaurantId}/tables/{tableId}")
     @ResponseStatus(HttpStatus.OK)
     void deleteTable(@PathVariable Long  restaurantId, @PathVariable Long tableId) {
+        restaurantService.removeTableFromRestaurant(restaurantId, tableId);
         tableService.deleteTableById(tableId);
     }
 }

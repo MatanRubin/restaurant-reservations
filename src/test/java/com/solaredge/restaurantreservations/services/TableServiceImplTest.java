@@ -95,7 +95,7 @@ public class TableServiceImplTest {
         // given
 
         // when
-//        tableService.deleteTable(ID);
+//        tableService.removeTableFromRestaurant(ID);
 //        TableDto tableById = tableService.getTableById(ID);
 //
         // then

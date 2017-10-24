@@ -22,6 +22,9 @@ public class RestaurantServiceImplTest {
     @Mock
     private RestaurantRepository restaurantRepository;
 
+    @Mock
+    private TableService tableService;
+
     private final RestaurantMapper mapper = RestaurantMapper.INSTANCE;
     private RestaurantService restaurantService;
 

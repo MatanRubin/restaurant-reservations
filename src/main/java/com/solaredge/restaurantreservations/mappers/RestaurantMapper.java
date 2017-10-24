@@ -5,9 +5,12 @@ import com.solaredge.restaurantreservations.domain.Restaurant;
 
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.stream.Collectors;
 
 public class RestaurantMapper {
     public static final RestaurantMapper INSTANCE = new RestaurantMapper();
+
+    private final TableMapper tableMapper = TableMapper.INSTANCE;
 
     public Restaurant restaurantDtoToRestaurant(RestaurantDto restaurantDto) {
         if (restaurantDto == null) {
@@ -18,7 +21,7 @@ public class RestaurantMapper {
                 restaurantDto.getId(),
                 restaurantDto.getName(),
                 restaurantDto.getAddress(),
-                new HashSet<>() // FIXME
+                restaurantDto.getTableDtos().stream().map(tableMapper::tableDtoToTable).collect(Collectors.toSet())
         );
     }
 
@@ -29,7 +32,7 @@ public class RestaurantMapper {
                         restaurant.getId(),
                         restaurant.getName(),
                         restaurant.getAddress(),
-                        Collections.emptySet()
+                        restaurant.getTables().stream().map(tableMapper::tableToTableDto).collect(Collectors.toSet())
                 );
     }
 }

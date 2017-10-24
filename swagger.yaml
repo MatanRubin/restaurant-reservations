@@ -205,7 +205,7 @@ paths:
       - "TableDto"
       summary: "Deletes a table if there are no reservations"
       description: ""
-      operationId: "deleteTable"
+      operationId: "removeTableFromRestaurant"
       produces:
       - "application/json"
       parameters:

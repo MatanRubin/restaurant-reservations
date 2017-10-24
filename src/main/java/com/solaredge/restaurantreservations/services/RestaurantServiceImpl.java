@@ -65,6 +65,17 @@ public class RestaurantServiceImpl implements RestaurantService {
         TableDto createdTable = tableService.createTable(tableDto);
         restaurant.addTable(tableMapper.tableDtoToTable(createdTable));
         restaurantRepository.save(restaurant);
-        return tableDto;
+        return createdTable;
+    }
+
+    @Override
+    public void removeTableFromRestaurant(Long restaurantId, Long tableId) {
+        Optional<Restaurant> restaurantOptional = restaurantRepository.findById(restaurantId);
+        if (!restaurantOptional.isPresent()) {
+        }
+
+        Restaurant restaurant = restaurantOptional.get();
+        restaurant.removeTable(tableId);
+        restaurantRepository.save(restaurant);
     }
 }
