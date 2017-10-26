@@ -1,4 +1,5 @@
-# Restaurant Reservation System
+# Restaurant Reservation System [![CircleCI](https://circleci.com/gh/MatanRubin/restaurant-reservations/tree/master.svg?style=svg)](https://circleci.com/gh/MatanRubin/restaurant-reservations/tree/master)
+
 ## Overview
 This is a simple restaurant reservation system written for eductional purposes - 
 practicing building web services using Java's Spring/Sprint Boot and Hibernate. 
