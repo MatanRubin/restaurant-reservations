@@ -8,10 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.any;
@@ -25,6 +22,9 @@ public class RestaurantServiceImplTest {
     @Mock
     private TableService tableService;
 
+    @Mock
+    private ReservationService reservationService;
+
     private final RestaurantMapper mapper = RestaurantMapper.INSTANCE;
     private RestaurantService restaurantService;
 
@@ -35,14 +35,14 @@ public class RestaurantServiceImplTest {
     @Before
     public void setUp() throws Exception {
         initMocks(this);
-        restaurantService = new RestaurantServiceImpl(restaurantRepository, tableService);
+        restaurantService = new RestaurantServiceImpl(restaurantRepository, tableService, reservationService);
     }
 
     @Test
     public void createRestaurant() throws Exception {
         // given
         RestaurantDto restaurantDto = new RestaurantDto(null, NAME, ADDRESS);
-        Restaurant savedRestaurant = new Restaurant(ID, NAME, ADDRESS, new HashSet<>());
+        Restaurant savedRestaurant = new Restaurant(ID, NAME, ADDRESS);
         when(restaurantRepository.save(any())).thenReturn(savedRestaurant);
 
         // when
@@ -58,9 +58,9 @@ public class RestaurantServiceImplTest {
     public void findAllRestaurants() throws Exception {
         // given
         List<Restaurant> restaurants = Arrays.asList(
-                new Restaurant(1L, NAME, ADDRESS, new HashSet<>()),
-                new Restaurant(2L, NAME, ADDRESS, new HashSet<>()),
-                new Restaurant(3L, NAME, ADDRESS, new HashSet<>())
+                new Restaurant(1L, NAME, ADDRESS),
+                new Restaurant(2L, NAME, ADDRESS),
+                new Restaurant(3L, NAME, ADDRESS)
         );
         when(restaurantRepository.findAll()).thenReturn(restaurants);
 

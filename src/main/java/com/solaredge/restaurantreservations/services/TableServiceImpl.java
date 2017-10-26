@@ -44,4 +44,9 @@ public class TableServiceImpl implements TableService {
     public void deleteTableById(Long id) {
         tableRepository.deleteById(id);
     }
+
+    @Override
+    public TableDto getTableByName(String tableName) {
+        return tableMapper.tableToTableDto(tableRepository.findByName(tableName));
+    }
 }

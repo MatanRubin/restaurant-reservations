@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.TreeMap;
 
 @Component
 public class Bootstrap implements CommandLineRunner {
@@ -22,25 +23,16 @@ public class Bootstrap implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        restaurantRepository.saveAll(Arrays.asList(
-                new Restaurant(
-                        null,
-                        "Zozobra",
-                        "Shenkar St.",
-                        new HashSet<>(Arrays.asList(
-                                new Table(null, "VIP Table", 19),
-                                new Table(null, "Window Table", 4),
-                                new Table(null, "Round Table", 6)
-                        ))),
-                new Restaurant(
-                        null,
-                        "Moses",
-                        "Aba Even St.",
-                        new HashSet<>(Arrays.asList(
-                                new Table(null, "Porch Table", 5),
-                                new Table(null, "Big Table", 20),
-                                new Table(null, "Table Table", 4)
-                        ))))
-        );
+        Restaurant zozobra = new Restaurant(null, "Zozobra", "Shenkar St.");
+        zozobra.addTable(new Table(null, "VIP Table", 19));
+        zozobra.addTable(new Table(null, "Window Table", 4));
+        zozobra.addTable(new Table(null, "Round Table", 6));
+
+        Restaurant moses = new Restaurant(null, "Moses", "Aba Even St.");
+        moses.addTable(new Table(null, "Porch Table", 5));
+        moses.addTable(new Table(null, "Big Table", 20));
+        moses.addTable(new Table(null, "Table Table", 4));
+
+        restaurantRepository.saveAll(Arrays.asList(zozobra, moses));
     }
 }

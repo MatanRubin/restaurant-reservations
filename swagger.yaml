@@ -233,7 +233,7 @@ paths:
       - "ReservationDto"
       summary: "Return a list of reservations"
       description: ""
-      operationId: "getReservations"
+      operationId: "getReservationsById"
       consumes:
       - "application/json"
       produces:

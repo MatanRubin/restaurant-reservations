@@ -9,4 +9,5 @@ public interface TableService {
     Set<TableDto> getAllTables();
     TableDto createTable(TableDto table);
     void deleteTableById(Long id);
+    TableDto getTableByName(String tableName);
 }

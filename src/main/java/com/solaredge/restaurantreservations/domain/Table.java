@@ -1,6 +1,5 @@
 package com.solaredge.restaurantreservations.domain;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
 import lombok.AllArgsConstructor;
 import lombok.Synchronized;
 import lombok.Value;
@@ -8,6 +7,7 @@ import lombok.Value;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Entity
 @Value
@@ -22,38 +22,67 @@ public class Table {
     private int capacity;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private TreeMap<LocalDateTime, Reservation> reservations = new TreeMap<>();
+    private Set<Reservation> reservations = new HashSet<>();
+
+    @Transient
+    private Map<Long, Reservation> reservationsById = new HashMap<>();
+
+    @Transient
+    private TreeMap<LocalDateTime, Reservation> reservationSortedByTime = new TreeMap<>();
 
     public Table() {
         this(null, null, 0);
     }
 
-    @Synchronized
+    @PostLoad
+    private void initReservationMaps() {
+        reservations.forEach(reservation -> reservationsById.put(reservation.getId(), reservation));
+        reservations.forEach(reservation -> reservationSortedByTime.put(reservation.getStartTime(), reservation));
+    }
+
     public void addReservation(Reservation reservation) {
-        if (isAvailableAt(reservation.getStartDate(), reservation.getEndDate())) {
-            reservations.put(reservation.getStartDate(), reservation);
-        } else {
-            throw new IllegalStateException("Table is not available at startDate=" + reservation.getStartDate() +
-                    " endDate=" + reservation.getEndDate());
+        if (!name.equals(reservation.getTableName())) {
+            throw new IllegalStateException("Table name mismatch. actualTableName=" + name +
+                    " reservationTableName=" + reservation.getTableName());
+        }
+        if (capacity < reservation.getNPeople()) {
+            throw new IllegalStateException("Table too small. capacity=" + capacity +
+                    " nPeople=" + reservation.getNPeople());
+        }
+        if (!isAvailableAt(reservation.getStartTime(), reservation.getEndTime())) {
+            throw new IllegalStateException("Table is not available at startTime=" + reservation.getStartTime() +
+                    " endDate=" + reservation.getEndTime());
         }
 
+        addReservationToAllPlaces(reservation);
+    }
+
+    private void addReservationToAllPlaces(Reservation reservation) {
+        reservations.add(reservation);
+        reservationsById.put(reservation.getId(), reservation);
+        reservationSortedByTime.put(reservation.getStartTime(), reservation);
         verifyNoOverlappingReservations();
     }
 
-    @Synchronized
-    void removeReservation(Reservation reservation) {
-        reservations.remove(reservation.getStartDate());
+    public void removeReservation(Long reservationId) {
+        Reservation removed = reservationsById.remove(reservationId);
+        reservationSortedByTime.remove(removed.getStartTime());
+        reservations.remove(removed);
     }
 
-    private boolean isAvailableAt(LocalDateTime startTime, LocalDateTime endTime) {
-        Reservation earlierReservation = reservations.floorEntry(startTime).getValue(); // XXX possible NPE
-        if (earlierReservation != null && earlierReservation.getEndDate().isAfter(startTime)) {
-            return false;
+    public boolean isAvailableAt(LocalDateTime startTime, LocalDateTime endTime) {
+        Map.Entry<LocalDateTime, Reservation> earlierReservationEntry = reservationSortedByTime.floorEntry(startTime);
+        if (earlierReservationEntry != null) {
+            if (earlierReservationEntry.getValue().getEndTime().isAfter(startTime)) {
+                return false;
+            }
         }
 
-        Reservation laterReservation = reservations.ceilingEntry(startTime).getValue(); // XXX possible NPE
-        if (laterReservation != null && laterReservation.getStartDate().isBefore(endTime)) {
-            return false;
+        Map.Entry<LocalDateTime, Reservation> laterReservationEntry = reservationSortedByTime.ceilingEntry(startTime);
+        if (laterReservationEntry != null) {
+            if (laterReservationEntry.getValue().getStartTime().isBefore(endTime)) {
+                return false;
+            }
         }
 
         return true;
@@ -62,4 +91,5 @@ public class Table {
     private void verifyNoOverlappingReservations() {
         // TODO implement
     }
+
 }

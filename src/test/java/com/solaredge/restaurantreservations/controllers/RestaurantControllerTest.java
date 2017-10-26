@@ -72,7 +72,7 @@ public class RestaurantControllerTest {
                 .andExpect(jsonPath("$.id", equalTo(1)));
     }
 
-    @Ignore // TODO implement exception throwing
+    @Ignore // TODO implement exceptions
     @Test
     public void getNonexistentRestaurantById() throws Exception {
         // when + then

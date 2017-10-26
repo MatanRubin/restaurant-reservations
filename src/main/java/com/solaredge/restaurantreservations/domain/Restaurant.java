@@ -2,10 +2,11 @@ package com.solaredge.restaurantreservations.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.Synchronized;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import java.time.LocalDateTime;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Entity
@@ -20,19 +21,32 @@ public class Restaurant {
     private String address;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Set<Table> tables;
+    @MapKey(name = "id")
+    private Map<Long, Table> tables;
 
     public Restaurant() {
-        this(null, null, null, new HashSet<>());
+        this(null, null, null, new HashMap<>());
+    }
+
+    public Restaurant(Long id, String name, String address) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.tables = new HashMap<>();
     }
 
     public void addTable(Table table) {
-        tables.add(table);
+        tables.put(table.getId(), table);
     }
 
     public void removeTable(long tableId) {
-        tables = tables.stream()
-                .filter(table -> table.getId() != tableId)
+        tables.remove(tableId);
+    }
+
+    public Set<Table> findAvailableTables(LocalDateTime startTime, LocalDateTime endTime, int nPeople) {
+        return tables.values().stream()
+                .filter(table -> table.getCapacity() >= nPeople)
+                .filter(table -> table.isAvailableAt(startTime, endTime))
                 .collect(Collectors.toSet());
     }
 }
