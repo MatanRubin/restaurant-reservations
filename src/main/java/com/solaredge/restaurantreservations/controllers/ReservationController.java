@@ -33,7 +33,7 @@ public class ReservationController {
         return reservationService.getReservationById(reservationId);
     }
 
-    @GetMapping("/restaurants/{restaurantId}/reservations/options")
+    @GetMapping("/restaurants/{restaurantId}/reservations/available-tables")
     public TableSetDto getAvailableTables(
             @PathVariable Long restaurantId,
             @RequestParam(name = "startTime") LocalDateTime startTime,
