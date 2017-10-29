@@ -1,6 +1,8 @@
 package com.solaredge.restaurantreservations;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.solaredge.restaurantreservations.api.model.*;
+import com.solaredge.restaurantreservations.controllers.TestUtils;
 import lombok.extern.java.Log;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,12 +10,14 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.time.LocalDateTime;
+import java.util.Collections;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -44,7 +48,7 @@ public class RestaurantReservationsApplicationTests {
         RestaurantSetDto restaurants = restTemplate.getForObject(apiUrl + "/restaurants", RestaurantSetDto.class);
         assertEquals(2, restaurants.getRestaurants().size());
 
-        // create restaurant
+        log.info("creating a restaurant");
         RestaurantDto restaurantDto = new RestaurantDto(null, "Lalala", "Nordau");
         RestaurantDto createdRestaurantDto = restTemplate.postForObject(
                 apiUrl + "/restaurants",
@@ -55,7 +59,7 @@ public class RestaurantReservationsApplicationTests {
         assertEquals(restaurantDto.getAddress(), createdRestaurantDto.getAddress());
         assertEquals(0, restaurantDto.getTableDtos().size());
 
-        // create table
+        log.info("creating a table");
         TableDto tableDto = new TableDto(null, "Big Table", 20);
         TableDto createdTableDto = restTemplate.postForObject(
                 apiUrl + "/restaurants/" + createdRestaurantDto.getId() + "/tables",
@@ -65,7 +69,7 @@ public class RestaurantReservationsApplicationTests {
         assertEquals(tableDto.getName(), createdTableDto.getName());
         assertEquals(tableDto.getCapacity(), createdTableDto.getCapacity());
 
-        // show available tables
+        log.info("getting available tables");
         LocalDateTime startTime = LocalDateTime.now();
         LocalDateTime endTime = startTime.plusHours(2L);
         int nPeople = 10;
@@ -78,13 +82,20 @@ public class RestaurantReservationsApplicationTests {
                 .queryParam("endTime", endTime)
                 .queryParam("nPeople", nPeople);
 
-
         TableSetDto availableTables = restTemplate.getForObject(
                 uriBuilder.build().toUriString(),
                 TableSetDto.class);
         assertEquals(1, availableTables.getTables().size());
 
-        // reserve table
+        log.info("making sure there are no reservations");
+        ReservationSetDto reservations = restTemplate.getForObject(
+                UriComponentsBuilder.fromHttpUrl(apiUrl)
+                        .pathSegment("restaurants")
+                        .pathSegment(createdRestaurantDto.getId().toString())
+                        .pathSegment("reservations").build().toUriString(), ReservationSetDto.class);
+        assertEquals(0, reservations.getReservations().size());
+
+        log.info("reserving a table");
         ReservationDto reservationDto = new ReservationDto(
                 null,
                 "Matan Rubin",
@@ -92,7 +103,10 @@ public class RestaurantReservationsApplicationTests {
                 endTime,
                 "Big Table",
                 nPeople);
-        ReservationDto createdReservationDto = restTemplate.postForObject(
+        assertEquals(10, reservationDto.getNPeople());
+
+        String s = TestUtils.asJsonString(reservationDto);
+        ResponseEntity<ReservationDto> reservationDtoResponseEntity = restTemplate.postForEntity(
                 UriComponentsBuilder.fromHttpUrl(apiUrl)
                         .pathSegment("restaurants")
                         .pathSegment(createdRestaurantDto.getId().toString())
@@ -100,12 +114,14 @@ public class RestaurantReservationsApplicationTests {
                         .build().toUriString(),
                 reservationDto,
                 ReservationDto.class);
+        assertEquals(HttpStatus.CREATED, reservationDtoResponseEntity.getStatusCode());
 
-        assertNotNull(createdReservationDto.getId());
-        assertEquals(reservationDto.getTableName(), createdReservationDto.getTableName());
-        assertEquals(reservationDto.getEndTime(), createdReservationDto.getEndTime());
-        assertEquals(reservationDto.getStartTime(), createdReservationDto.getStartTime());
-        assertEquals(reservationDto.getNPeople(), createdReservationDto.getNPeople());
-        assertEquals(reservationDto.getName(), createdReservationDto.getName());
+        log.info("make sure the reservation was created");
+        reservations = restTemplate.getForObject(
+                UriComponentsBuilder.fromHttpUrl(apiUrl)
+                        .pathSegment("restaurants")
+                        .pathSegment(createdRestaurantDto.getId().toString())
+                        .pathSegment("reservations").build().toUriString(), ReservationSetDto.class);
+        assertEquals(1, reservations.getReservations().size());
     }
 }

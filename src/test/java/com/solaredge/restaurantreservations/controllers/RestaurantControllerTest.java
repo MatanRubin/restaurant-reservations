@@ -1,6 +1,7 @@
 package com.solaredge.restaurantreservations.controllers;
 
 import com.solaredge.restaurantreservations.api.model.RestaurantDto;
+import com.solaredge.restaurantreservations.exceptions.NotFoundException;
 import com.solaredge.restaurantreservations.services.RestaurantService;
 import org.junit.Before;
 import org.junit.Ignore;
@@ -72,9 +73,10 @@ public class RestaurantControllerTest {
                 .andExpect(jsonPath("$.id", equalTo(1)));
     }
 
-    @Ignore // TODO implement exceptions
     @Test
     public void getNonexistentRestaurantById() throws Exception {
+        when(restaurantService.getRestaurantById(anyLong())).thenThrow(NotFoundException.class);
+
         // when + then
         mockMvc.perform(get("/api/restaurants/1").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound());

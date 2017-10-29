@@ -2,6 +2,7 @@ package com.solaredge.restaurantreservations.services;
 
 import com.solaredge.restaurantreservations.api.model.RestaurantDto;
 import com.solaredge.restaurantreservations.domain.Restaurant;
+import com.solaredge.restaurantreservations.exceptions.NotFoundException;
 import com.solaredge.restaurantreservations.mappers.RestaurantMapper;
 import com.solaredge.restaurantreservations.repositories.RestaurantRepository;
 import org.junit.Before;
@@ -12,6 +13,7 @@ import java.util.*;
 
 import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
@@ -80,13 +82,16 @@ public class RestaurantServiceImplTest {
         // then
     }
 
-    @Test
+    @Test(expected = NotFoundException.class)
     public void getNonExistingById() throws Exception {
         // given
+        when(restaurantRepository.findById(anyLong())).thenReturn(Optional.empty());
 
         // when
+        restaurantService.getRestaurantById(1L);
 
         // then
+        // expect NotFoundException
     }
 
     @Test

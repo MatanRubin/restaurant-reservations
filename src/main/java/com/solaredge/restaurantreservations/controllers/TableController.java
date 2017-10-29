@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/api")
 public class TableController {
@@ -31,7 +33,7 @@ public class TableController {
 
     @PostMapping("/restaurants/{restaurantId}/tables")
     @ResponseStatus(HttpStatus.CREATED)
-    TableDto createTable(@PathVariable Long restaurantId, @RequestBody TableDto tableDto) {
+    TableDto createTable(@PathVariable Long restaurantId, @Valid @RequestBody TableDto tableDto) {
         return restaurantService.addTableToRestaurant(restaurantId, tableDto);
     }
 

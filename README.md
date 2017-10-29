@@ -14,10 +14,12 @@ The API is documented using swagger-ui.
 Technologies used:
 * Spring 4 with Spring Boot
 * Hibernate
+* H2 in-memory database
 * Swagger and Swagger UI
 * Tomcat
 * JUnit
 * Mockito
+* Project Lombok
 
 
 ## Running the Project

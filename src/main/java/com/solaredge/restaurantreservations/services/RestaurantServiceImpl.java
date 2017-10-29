@@ -5,6 +5,7 @@ import com.solaredge.restaurantreservations.api.model.RestaurantDto;
 import com.solaredge.restaurantreservations.api.model.TableDto;
 import com.solaredge.restaurantreservations.domain.Restaurant;
 import com.solaredge.restaurantreservations.domain.Table;
+import com.solaredge.restaurantreservations.exceptions.NotFoundException;
 import com.solaredge.restaurantreservations.mappers.ReservationMapper;
 import com.solaredge.restaurantreservations.mappers.RestaurantMapper;
 import com.solaredge.restaurantreservations.mappers.TableMapper;
@@ -55,7 +56,7 @@ public class RestaurantServiceImpl implements RestaurantService {
     public RestaurantDto getRestaurantById(Long id) {
         Restaurant restaurant = restaurantRepository.
                 findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Can't find restaurant with id=" + id));
+                .orElseThrow(() -> new NotFoundException("Can't find restaurant with id=" + id));
 
         return restaurantMapper.restaurantToRestaurantDto(restaurant);
     }

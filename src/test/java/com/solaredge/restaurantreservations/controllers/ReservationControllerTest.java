@@ -3,6 +3,7 @@ package com.solaredge.restaurantreservations.controllers;
 import com.solaredge.restaurantreservations.api.model.ReservationDto;
 import com.solaredge.restaurantreservations.api.model.ReservationSetDto;
 import com.solaredge.restaurantreservations.api.model.RestaurantDto;
+import com.solaredge.restaurantreservations.exceptions.NotFoundException;
 import com.solaredge.restaurantreservations.services.ReservationService;
 import com.solaredge.restaurantreservations.services.RestaurantService;
 import org.junit.Before;
@@ -103,4 +104,13 @@ public class ReservationControllerTest {
         // then
     }
 
+    @Test
+    public void getNonExistentReservation() throws Exception {
+        // given
+        when(reservationService.getReservationById(anyLong())).thenThrow(NotFoundException.class);
+
+        // when + then
+        mockMvc.perform(get("/api/restaurants/1/reservations/10"))
+                .andExpect(status().isNotFound());
+    }
 }

@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @Log
 @RestController
 @RequestMapping("/api/restaurants")
@@ -34,7 +36,7 @@ public class RestaurantController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    RestaurantDto createRestaurant(@RequestBody RestaurantDto restaurantDto) {
+    RestaurantDto createRestaurant(@Valid @RequestBody RestaurantDto restaurantDto) {
         log.info("createRestaurant called");
         return restaurantService.createRestaurant(restaurantDto);
     }

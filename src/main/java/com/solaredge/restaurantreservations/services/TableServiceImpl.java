@@ -2,6 +2,7 @@ package com.solaredge.restaurantreservations.services;
 
 import com.solaredge.restaurantreservations.api.model.TableDto;
 import com.solaredge.restaurantreservations.domain.Table;
+import com.solaredge.restaurantreservations.exceptions.NotFoundException;
 import com.solaredge.restaurantreservations.mappers.TableMapper;
 import com.solaredge.restaurantreservations.repositories.TableRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,8 @@ public class TableServiceImpl implements TableService {
     @Override
     public TableDto getTableById(Long id) {
         Optional<Table> tableOptional = tableRepository.findById(id);
-        return tableMapper.tableToTableDto(tableOptional.get());
+        return tableMapper.tableToTableDto(
+                tableOptional.orElseThrow(() -> new NotFoundException("Can't find table with id=" + id)));
     }
 
     @Override
@@ -47,6 +49,10 @@ public class TableServiceImpl implements TableService {
 
     @Override
     public TableDto getTableByName(String tableName) {
-        return tableMapper.tableToTableDto(tableRepository.findByName(tableName));
+        Table table = tableRepository.findByName(tableName);
+        if (table == null) {
+            throw new NotFoundException("Can't find table with name='" + tableName + "'");
+        }
+        return tableMapper.tableToTableDto(table);
     }
 }
