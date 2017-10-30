@@ -12,6 +12,7 @@ in restaurants.
 The API is documented using swagger-ui.
 
 Technologies used:
+
 * Spring 4 with Spring Boot
 * Hibernate
 * H2 in-memory database
