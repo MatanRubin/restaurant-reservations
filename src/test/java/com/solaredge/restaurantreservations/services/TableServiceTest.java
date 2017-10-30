@@ -15,7 +15,7 @@ import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
-public class TableServiceImplTest {
+public class TableServiceTest {
 
     @Mock
     private TableRepository tableRepository;
@@ -39,7 +39,7 @@ public class TableServiceImplTest {
     @Before
     public void setUp() throws Exception {
         initMocks(this);
-        tableService = new TableServiceImpl(tableRepository);
+        tableService = new TableService(tableRepository);
     }
 
     @Test

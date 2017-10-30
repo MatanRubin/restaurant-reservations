@@ -17,7 +17,7 @@ import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
-public class RestaurantServiceImplTest {
+public class RestaurantServiceTest {
     @Mock
     private RestaurantRepository restaurantRepository;
 
@@ -37,7 +37,7 @@ public class RestaurantServiceImplTest {
     @Before
     public void setUp() throws Exception {
         initMocks(this);
-        restaurantService = new RestaurantServiceImpl(restaurantRepository, tableService, reservationService);
+        restaurantService = new RestaurantService(restaurantRepository, tableService, reservationService);
     }
 
     @Test
