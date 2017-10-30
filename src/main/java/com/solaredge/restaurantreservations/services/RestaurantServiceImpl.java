@@ -82,7 +82,7 @@ public class RestaurantServiceImpl implements RestaurantService {
     public TableDto addTableToRestaurant(Long restaurantId, TableDto tableDto) {
         Optional<Restaurant> restaurantOptional = restaurantRepository.findById(restaurantId);
         if (!restaurantOptional.isPresent()) {
-            // TODO handle errors
+            throw new NotFoundException("Can't find restaurant with id=" + restaurantId);
         }
         Restaurant restaurant = restaurantOptional.get();
 
@@ -96,7 +96,7 @@ public class RestaurantServiceImpl implements RestaurantService {
     public void removeTableFromRestaurant(Long restaurantId, Long tableId) {
         Optional<Restaurant> restaurantOptional = restaurantRepository.findById(restaurantId);
         if (!restaurantOptional.isPresent()) {
-            // FIXME
+            throw new NotFoundException("Can't find restaurant with id=" + restaurantId);
         }
 
         Restaurant restaurant = restaurantOptional.get();

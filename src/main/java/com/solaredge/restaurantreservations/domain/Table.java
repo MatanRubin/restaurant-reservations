@@ -61,7 +61,6 @@ public class Table {
         reservations.add(reservation);
         reservationsById.put(reservation.getId(), reservation);
         reservationSortedByTime.put(reservation.getStartTime(), reservation);
-        verifyNoOverlappingReservations();
     }
 
     public void removeReservation(Long reservationId) {
@@ -87,9 +86,4 @@ public class Table {
 
         return true;
     }
-
-    private void verifyNoOverlappingReservations() {
-        // TODO implement
-    }
-
 }
