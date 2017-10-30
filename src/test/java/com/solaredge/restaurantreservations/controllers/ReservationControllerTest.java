@@ -60,51 +60,6 @@ public class ReservationControllerTest {
     }
 
     @Test
-    public void getReservationInfo() throws Exception {
-        // given
-
-        // when
-
-        // then
-    }
-
-    @Test
-    public void getAvailableTables() throws Exception {
-        // given
-
-        // when
-
-        // then
-    }
-
-    @Test
-    public void reserveTable() throws Exception {
-        // given
-
-        // when
-
-        // then
-    }
-
-    @Test
-    public void cancelReservation() throws Exception {
-        // given
-
-        // when
-
-        // then
-    }
-
-    @Test
-    public void updateReservation() throws Exception {
-        // given
-
-        // when
-
-        // then
-    }
-
-    @Test
     public void getNonExistentReservation() throws Exception {
         // given
         when(reservationService.getReservationById(anyLong())).thenThrow(NotFoundException.class);

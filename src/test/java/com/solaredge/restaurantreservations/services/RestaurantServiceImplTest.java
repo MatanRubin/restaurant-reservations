@@ -73,15 +73,6 @@ public class RestaurantServiceImplTest {
         assertEquals(restaurants.size(), allRestaurants.size());
     }
 
-    @Test
-    public void getRestaurantById() throws Exception {
-        // given
-
-        // when
-
-        // then
-    }
-
     @Test(expected = NotFoundException.class)
     public void getNonExistingById() throws Exception {
         // given
@@ -93,19 +84,4 @@ public class RestaurantServiceImplTest {
         // then
         // expect NotFoundException
     }
-
-    @Test
-    public void deleteRestaurant() throws Exception {
-        // given
-
-        // when
-
-        // then
-    }
-
-    @Test
-    public void deleteNonExistingRestaurant() throws Exception {
-
-    }
-
 }

@@ -89,17 +89,4 @@ public class TableServiceImplTest {
         assertEquals(table.getName(), createdTable.getName());
         assertEquals(table.getCapacity(), createdTable.getCapacity());
     }
-
-    @Test // TODO improve
-    public void deleteTable() throws Exception {
-        // given
-
-        // when
-//        tableService.removeTableFromRestaurant(ID);
-//        TableDto tableById = tableService.getTableById(ID);
-//
-        // then
-//        assertNull(tableById);
-    }
-
 }

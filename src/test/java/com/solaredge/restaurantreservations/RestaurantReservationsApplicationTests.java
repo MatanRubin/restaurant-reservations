@@ -1,6 +1,5 @@
 package com.solaredge.restaurantreservations;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.solaredge.restaurantreservations.api.model.*;
 import com.solaredge.restaurantreservations.controllers.TestUtils;
 import lombok.extern.java.Log;
@@ -13,11 +12,9 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.time.LocalDateTime;
-import java.util.Collections;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;

@@ -15,14 +15,6 @@ public class RestaurantTest {
     public void setUp() throws Exception {
         restaurant = new Restaurant(1L, "Moses", "Shenkar");
         restaurant.addTable(new Table(1L, "Round Table", 4));
-//        restaurant.addReservation(new Reservation(
-//                1L,
-//                "Maloni",
-//                LocalDateTime.parse("2007-12-03T19:00:00"),
-//                LocalDateTime.parse("2007-12-03T21:00:00"),
-//                "Round Table",
-//                3)
-//        );
     }
 
     @Test
